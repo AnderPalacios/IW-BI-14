@@ -24,6 +24,11 @@
         <link href="{% static 'css/vegas.min.css' %}" rel="stylesheet"> 
 
         <link href="{% static 'css/tooplate-barista.css' %}" rel="stylesheet"> 
+
+        <!-- JAVASCRIPT FILES --> 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- <script type="text/javascript" src="{% static 'js/script_jquery.js' %}"></script> -->
         
 <!--
 
@@ -54,7 +59,7 @@ Bootstrap 5 HTML CSS Template
                                 </li>
         
                                 <li class="nav-item">
-                                    <a class="nav-link click-scroll" href="#section_2">Acerda del Bestiario</a>
+                                    <a class="nav-link click-scroll" href="#section_2">Acerca del Bestiario</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -78,6 +83,14 @@ Bootstrap 5 HTML CSS Template
                 <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
                     <div class="container">
+                        <!-- Fondo rotatorio -->
+                        <div id="scroll" class="ocultas" style="display: none;"> 
+                            <img src="{% static 'images/fondo1.jpg' %}" alt="Fondo 1">
+                            <img src="{% static 'images/fondo2.png' %}" alt="Fondo 2">
+                            <img src="{% static 'images/fondo3.jpg' %}" alt="Fondo 3">
+                        </div>
+
+
                         <div class="row align-items-center">
 
                             <div class="col-lg-6 col-12 mx-auto">
@@ -705,7 +718,8 @@ Bootstrap 5 HTML CSS Template
         <script src="js/vegas.min.js"></script>
         <!-- <script src="js/custom.js"></script> -->
         
-        <script src="{% static 'js/custom.js' %}"></script>
-
+        <!-- <script src="{% static 'js/custom.js' %}"></script> -->
+        <!-- Nuestros scrips -->
+         <script src="{% static 'js/script_jquery.js' %}"></script>
     </body>
 </html>
