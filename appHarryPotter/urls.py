@@ -9,4 +9,5 @@ urlpatterns = [
  path('appHarryPotter/razas/<int:raza_id>/criaturas/', views.criaturas_por_raza, name='criaturas_por_raza'),
  path('appHarryPotter/criaturas', views.show_criaturas, name="criaturas"),
  path('appHarryPotter/criatura/<int:criatura_id>/', views.ver_criatura, name='criatura'),
+ path('appHarryPotter/formulario/', views.formularios, name='formulario'),  
 ]
