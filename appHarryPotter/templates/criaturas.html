@@ -56,7 +56,7 @@ Bootstrap 5 HTML CSS Template
                                 </li>
         
                                 <li class="nav-item">
-                                    <a class="nav-link click-scroll" href="http://127.0.0.1:8000/#section_2">Acerda del Bestiario</a>
+                                    <a class="nav-link click-scroll" href="http://127.0.0.1:8000/#section_2">Acerca del Bestiario</a>
                                 </li>
 
                                 <li class="nav-item">
@@ -66,9 +66,15 @@ Bootstrap 5 HTML CSS Template
                             </ul>
 
                             <div class="ms-lg-3">
-                                <a class="btn custom-btn custom-border-btn" href="http://127.0.0.1:8000/appHarryPotter/criaturas">
+                                <a class="btn custom-btn custom-border-btn  {% if request.path == '/appHarryPotter/criaturas/' %}active{% endif %}" href="http://127.0.0.1:8000/appHarryPotter/criaturas">
                                     Criaturas
                                     <!-- <i class="bi-arrow-up-right ms-2"></i> -->
+                                </a>
+                            </div>
+
+                            <div class="ms-3">
+                                <a class="btn custom-btn custom-border-btn  {% if request.path != '/appHarryPotter/criaturas/' %}active{% endif %}" href="http://127.0.0.1:8000/appHarryPotter/formulario">
+                                    Añadir criatura
                                 </a>
                             </div>
                         </div>
@@ -127,7 +133,8 @@ Bootstrap 5 HTML CSS Template
                                                             <p>No hay criaturas.</p>
                                                         {% endif %}
                                                     </div>
-
+                                                    
+                                                    
                                                     <!-- <div class="col-lg-4 col-md-10 col-8 mx-auto mt-2">
                                                         <button type="submit" class="form-control">Leido</button>
                                                     </div> -->
