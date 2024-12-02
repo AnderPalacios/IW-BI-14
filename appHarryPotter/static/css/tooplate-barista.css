@@ -171,6 +171,11 @@ strong {
 /*---------------------------------------
   TIMELINE               
 -----------------------------------------*/
+#p1, #p2 {
+  display: none;
+}
+
+
 .timeline {
   position: relative;
   max-width: 1200px;

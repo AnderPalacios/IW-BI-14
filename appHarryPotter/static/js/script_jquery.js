@@ -55,4 +55,13 @@ $(document).ready(function () {
     // Inicia la rotación
     cambiaFondo();
     setInterval(cambiaFondo, 3000);
+
+
+
+    //Selector del <div> oculto
+    // alert("ndjafhadbfhbdhbb");
+    $("#p1").fadeIn("slow");
+    setTimeout(function () {
+        $("#p2").fadeIn("slow");
+    }, 1500); 
 });
