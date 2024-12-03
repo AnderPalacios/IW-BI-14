@@ -27,6 +27,7 @@
 
         <!-- JAVASCRIPT FILES --> 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
 
         <!-- <script type="text/javascript" src="{% static 'js/script_jquery.js' %}"></script> -->
         
@@ -170,13 +171,6 @@ Bootstrap 5 HTML CSS Template
                                 <h2 class="text-white">Descubre las diferentes Razas</h2>
                             </div>
                             <!--  -->
-                            <!-- {% if lista_criaturas %}
-                                {% for cr in lista_criaturas %}
-                                    <p>{{cr.nombre}}</p>
-                                {% endfor %}
-                            {% else %}
-                                <p>No hay criaturas.</p>
-                            {% endif %} -->
                             {% if lista_criaturas %}
                                 {% for criatura in lista_criaturas %}
                                     <div class="col-lg-3 col-md-6 col-12 mb-4">
@@ -235,131 +229,6 @@ Bootstrap 5 HTML CSS Template
                                 <p>No hay criaturas para estas razas.</p>
                             {% endif %}
                             <!--  -->
-                            <!-- <div class="col-lg-3 col-md-6 col-12 mb-4">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Troll</h4>
-
-                                            <p class="badge ms-4"><em>Criatura Gigante</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Hombre lobo</h4>
-
-                                            <p class="badge ms-4"><em>Criatura Mágica</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/hombre_lobo.jpg' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-12 mb-4">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Fénix</h4>
-
-                                            <p class="badge ms-4"><em>Ave Mágica</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Ave inmortal que renace de sus cenizas.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/fenix.jpg' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Colacuerno Húngaro</h4>
-
-                                            <p class="badge ms-4"><em>Dragón</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Dragón negro más temido.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/colacuerno.png' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Dementor</h4>
-
-                                            <p class="badge ms-4"><em>Ser Oscuro</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Ser oscuro que arrebata el alma de sus víctimas.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/dementor.png' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Sirena</h4>
-
-                                            <p class="badge ms-4"><em>Criatura Acuática</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Seres inteligentes que habitan en lagos mágicos.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/sirena.png' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 col-12">
-                                <div class="team-block-wrap">
-                                    <div class="team-block-info d-flex flex-column">
-                                        <div class="d-flex mt-auto mb-3">
-                                            <h4 class="text-white mb-0">Centauro</h4>
-
-                                            <p class="badge ms-4"><em>Híbrida</em></p>
-                                        </div>
-
-                                        <p class="text-white mb-0">Seres híbridos, expertos en astronomía.</p>
-                                    </div>
-
-                                    <div class="team-block-image-wrap">
-                                        <img src="{% static 'images/centauro.jpg' %}" class="team-block-image img-fluid" alt="">
-                                    </div>
-                                </div>
-                            </div> -->
 
                         </div>
                     </div>
@@ -448,13 +317,6 @@ Bootstrap 5 HTML CSS Template
                                                 <div class="d-flex border-top pt-3 mt-4">
                                                     <strong class="text-white">¿Sabías que? <small class="ms-2">Las criaturas de categoría inofensiva, como el Unicornio, son inocuas para los humanos pero poseen poderes mágicos muy valiosos.</small></strong>
 
-                                                    <!-- <div class="reviews-group ms-auto">
-                                                        <i class="bi-star-fill"></i>
-                                                        <i class="bi-star-fill"></i>
-                                                        <i class="bi-star-fill"></i>
-                                                        <i class="bi-star-fill"></i>
-                                                        <i class="bi-star"></i>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -466,54 +328,6 @@ Bootstrap 5 HTML CSS Template
                     </div>
                 </section>
 
-
-                <!-- <section class="contact-section section-padding" id="section_5">
-                    <div class="container">
-                        <div class="row">   
-
-                            <div class="col-lg-12 col-12">
-                                <em class="text-white">Say Hello</em>
-                                <h2 class="text-white mb-4 pb-lg-2">Contact</h2>
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <form action="#" method="post" class="custom-form contact-form">
-
-                                <div class="row">
-                                    
-                                    <div class="col-lg-6 col-12">
-                                        <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
-
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Jackson" required="">
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <label for="email" class="form-label">Email Address</label>
-
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jack@gmail.com" required="">
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">How can we help?</label>
-
-                                        <textarea name="message" rows="4" class="form-control" id="message" placeholder="Message" required=""></textarea>
-                                        
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 col-12 mx-auto mt-3">
-                                    <button type="submit" class="form-control">Send Message</button>
-                                </div>
-                            </form>
-                            </div>
-
-                            <div class="col-lg-6 col-12 mx-auto mt-5 mt-lg-0 ps-lg-5">
-                                <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5039.668141741662!2d72.81814769288509!3d19.043340656729775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c994f34a7355%3A0x2680d63a6f7e33c2!2sLover%20Point!5e1!3m2!1sen!2sth!4v1692722771770!5m2!1sen!2sth" width="650" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
-                            </div>
-
-                        </div>
-                    </div>
-                </section> -->
 
 
                 <footer class="site-footer">
@@ -529,22 +343,6 @@ Bootstrap 5 HTML CSS Template
                                     <em>(Acceso restringido: Aparición únicamente para empleados registrados)</em>
                                 </strong>
 
-                                <!-- <ul class="social-icon mt-4">
-                                    <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-facebook">
-                                        </a>
-                                    </li>
-        
-                                    <li class="social-icon-item">
-                                        <a href="https://x.com/minthu" target="_blank" class="social-icon-link bi-twitter">
-                                        </a>
-                                    </li>
-
-                                    <li class="social-icon-item">
-                                        <a href="#" class="social-icon-link bi-whatsapp">
-                                        </a>
-                                    </li>
-                                </ul> -->
                             </div>
 
                             <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
