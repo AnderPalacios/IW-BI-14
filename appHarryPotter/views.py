@@ -6,7 +6,13 @@ from django.http import HttpResponse
 # Create your views here.
 def index(request):
     # Aquí pasarle al index.html las razas y que pille una de ellas
-    return render(request, 'index.html')
+    criaturas_filtradas1 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (1, 2, 6) ORDER BY id DESC) GROUP BY raza_id ')
+    criaturas_filtradas2 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (4, 5, 7) ORDER BY id ASC) GROUP BY raza_id ')
+    # Escoger en Fénix entre las aves mágicas
+    criaturas_filtradas3 = Criatura.objects.raw('SELECT * FROM appHarryPotter_Criatura WHERE raza_id = 3 AND nombre = "Fénix"')
+    criaturas_filtradas = list(criaturas_filtradas1) + list(criaturas_filtradas2) + list(criaturas_filtradas3)
+    criaturas_filtradas = sorted(criaturas_filtradas, key=lambda criatura: criatura.raza.id)
+    return render(request, 'index.html', {'lista_criaturas': criaturas_filtradas})
 
 
 def show_categorias(request):

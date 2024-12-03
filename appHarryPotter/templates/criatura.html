@@ -16,7 +16,7 @@
             <li><a href="{% url 'criaturas_por_categoria' cat.id %}">{{ cat.nombre }}</a></li>
         {% endfor %}
     </ul>
-    <p><strong>Raza:</strong> {{ criatura.raza.nombre }}</p>
+    <p><strong>Raza:</strong> <a href="{% url 'criaturas_por_raza' criatura.raza.id %}" id="cr_raza">{{ criatura.raza.nombre }}</a></p>
     
 
     <a href="{% url 'categorias' %}">Volver a categorías</a>

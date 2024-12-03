@@ -69,9 +69,14 @@ Bootstrap 5 HTML CSS Template
                             </ul>
 
                             <div class="ms-lg-3">
-                                <a class="btn custom-btn custom-border-btn" href="http://127.0.0.1:8000/appHarryPotter/criaturas">
+                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'criaturas' %}">
                                     Criaturas
-                                    <!-- <i class="bi-arrow-up-right ms-2"></i> -->
+                                </a>
+                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'categorias' %}">
+                                    Categoerías
+                                </a>
+                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'razas' %}">
+                                    Razas
                                 </a>
                             </div>
                         </div>
@@ -164,7 +169,54 @@ Bootstrap 5 HTML CSS Template
 
                                 <h2 class="text-white">Descubre las diferentes Razas</h2>
                             </div>
+                            <!--  -->
+                            <!-- {% if lista_criaturas %}
+                                {% for cr in lista_criaturas %}
+                                    <p>{{cr.nombre}}</p>
+                                {% endfor %}
+                            {% else %}
+                                <p>No hay criaturas.</p>
+                            {% endif %} -->
+                            {% if lista_criaturas %}
+                                {% for criatura in lista_criaturas %}
+                                    <div class="col-lg-3 col-md-6 col-12 mb-4">
+                                        <div class="team-block-wrap">
+                                            <div class="team-block-info d-flex flex-column">
+                                                <div class="d-flex mt-auto mb-3">
+                                                    <h4 class="text-white mb-0">{{ criatura.nombre }}</h4>
+                                                    <p class="badge ms-4"><em>{{ criatura.raza.nombre }}</em></p>
+                                                </div>
+                                                {% if criatura.nombre == "Troll" %}
+                                                    <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
+                                                {% elif criatura.nombre == "hombre lobo" %}
+                                                    <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
+                                                {% elif criatura.nombre == "Fénix" %}
+                                                    <p class="text-white mb-0">{{ criatura.descripcion }}</p>
+                                                {% elif criatura.nombre == "Colacuerno Húngaro" %}
+                                                    <p class="text-white mb-0">{{ criatura.descripcion }}</p>
+                                                {% elif criatura.nombre == "Dementor" %}
+                                                    <p class="text-white mb-0">{{ criatura.descripcion }}</p>
+                                                {% elif criatura.nombre == "Sierna" %}
+                                                    <p class="text-white mb-0">{{ criatura.descripcion }}</p>
+                                                {% elif criatura.nombre == "Centauro" %}
+                                                    <p class="text-white mb-0">{{ criatura.descripcion }}</p>
+                                                {% else %}
+                                                    <p>No hay descripción para esta criatura</p>
+                                                {% endif %}
+                                            </div>
 
+                                            <div class="team-block-image-wrap">
+                                                {% if criatura.nombre == "Troll" %}
+                                                    <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <p>No hay criaturas para estas razas.</p>
+                            {% endif %}
+                            <!--  -->
                             <div class="col-lg-3 col-md-6 col-12 mb-4">
                                 <div class="team-block-wrap">
                                     <div class="team-block-info d-flex flex-column">
@@ -295,183 +347,6 @@ Bootstrap 5 HTML CSS Template
                     </div>
                 </section>
 
-
-                <!-- <section class="menu-section section-padding" id="section_3">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                                <div class="menu-block-wrap">
-                                    <div class="text-center mb-4 pb-lg-2">
-                                        <em class="text-white">Delicious Menu</em>
-                                        <h4 class="text-white">Breakfast</h4>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Pancakes</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$12.50</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Fresh brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>
-                                                Toasted Waffle
-                                            </h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="text-white ms-auto"><del>$16.50</del></strong>
-
-                                            <strong class="ms-2">$12.00</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Fried Chips
-                                                <span class="badge ms-3">Recommend</span>
-                                            </h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$15.0</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Rich Milk and Foam</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>Pancakes</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$12.50</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Fresh brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Banana Cakes</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$18.0</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Rich Milk and Foam</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-12">
-                                <div class="menu-block-wrap">
-                                    <div class="text-center mb-4 pb-lg-2">
-                                        <em class="text-white">Favourite Menu</em>
-                                        <h4 class="text-white">Coffee</h4>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Latte</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="text-white ms-auto"><del>$12.50</del></strong>
-
-                                            <strong class="ms-2">$7.50</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Fresh brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>
-                                                White Coffee
-                                                <span class="badge ms-3">Recommend</span>
-                                            </h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$5.90</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Chocolate Milk</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$5.50</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Rich Milk and Foam</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block my-4">
-                                        <div class="d-flex">
-                                            <h6>Greentea</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$7.50</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Fresh brewed coffee and steamed milk</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="menu-block">
-                                        <div class="d-flex">
-                                            <h6>Dark Chocolate</h6>
-                                        
-                                            <span class="underline"></span>
-
-                                            <strong class="ms-auto">$7.25</strong>
-                                        </div>
-
-                                        <div class="border-top mt-2 pt-2">
-                                            <small>Rich Milk and Foam</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section> -->
 
 
                 <section class="reviews-section section-padding section-bg" id="section_4">
