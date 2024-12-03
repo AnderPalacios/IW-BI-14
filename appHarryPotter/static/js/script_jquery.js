@@ -64,4 +64,6 @@ $(document).ready(function () {
     setTimeout(function () {
         $("#p2").fadeIn("slow");
     }, 1500); 
+
+    // alert("HOLAAAAAAAAAAAAAAAA");
 });
