@@ -50,30 +50,45 @@ $(document).ready(function () {
 
 
 
-    //Selector del <div> oculto
-    $("#p1").fadeIn("slow");
-    setTimeout(function () {
-        $("#p2").fadeIn("slow");
-    }, 1500); 
+    // Mostrar párrafos después de evento CLICK
+    // $("#p1").fadeIn("slow");
+    // setTimeout(function () {
+    //     $("#p2").fadeIn("slow");
+    // }, 1500); 
+    $('.ratio').css('display', 'none');
+    $("#startButton").on("click", function () {
+        // Eliminar el botón
+        $(this).remove();
 
+        // Mostrar #p1 con fadeIn
+        $("#p1").fadeIn("slow", function () {
+            // Una vez que #p1 se muestre, mostrar #p2 con delay
+            setTimeout(function () {
+                $("#p2").fadeIn("slow");
+            }, 1500);
+        });
 
-
-
-    $('.ratio').css({
-        position: 'relative',
-        top: '-400px', // Comienza un poco más arriba
-        opacity: 0     // Empieza invisible
+        $('.ratio').show();
+        $('.ratio').css({
+            position: 'relative',
+            top: '-400px', // Comienza un poco más arriba
+            opacity: 0     // Empieza invisible
+        });
+    
+        // Evento que activa el efecto al cargar la página
+        $('.ratio').animate(
+            {
+                top: '0px',       // Llega a su posición final
+                opacity: 1        // Se hace visible gradualmente
+            },
+            2800,                // Duración en milisegundos (1.2 segundos)
+            'easeOutElastic'       // Efecto de movimiento suave (requiere jQuery UI)
+        );
     });
 
-    // Evento que activa el efecto al cargar la página
-    $('.ratio').animate(
-        {
-            top: '0px',       // Llega a su posición final
-            opacity: 1        // Se hace visible gradualmente
-        },
-        2800,                // Duración en milisegundos (1.2 segundos)
-        'easeOutElastic'       // Efecto de movimiento suave (requiere jQuery UI)
-    );
+
+
+
 
 
 
