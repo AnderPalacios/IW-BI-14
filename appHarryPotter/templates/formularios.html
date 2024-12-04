@@ -1,99 +1,108 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Harry Potter Bestiary</title>
+        <title>Bestiario de Harry Potter</title>
         <meta charset="UTF-8">
         <meta name="description" content="Formulario para añadir criaturas al bestiario de Harry Potter">
-        <link rel="stylesheet" href="./style4.css">
-        <link rel="icon" href="./images/favicon.png" type="image/x-png">
+        <link href="{% static 'css/styleFormulario.css' %}" rel="stylesheet"> 
     </head>
     <body>
+        <!-- 
         <header>
             <div class="web_browser">
                 <div class="logo">
-                    <h2><strong>Hogwarts Bestiary</strong></h2>
-                    <h4>Creatures Research Center</h4>
+                    <h2><strong>Bestiario de Hogwarts</strong></h2>
+                    <h4>Centro de Investigación de Criaturas</h4>
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="{% url 'index' %}">Home</a></li>
-                        <li><a href="{% url 'categorias' %}">Categories</a></li>
-                        <li><a href="{% url 'razas' %}">Breeds</a></li>
-                        <li><a href="{% url 'criaturas' %}">Creatures</a></li>
+                        <li><a href="{% url 'index' %}">Inicio</a></li>
+                        <li><a href="{% url 'categorias' %}">Categorías</a></li>
+                        <li><a href="{% url 'razas' %}">Razas</a></li>
+                        <li><a href="{% url 'criaturas' %}">Criaturas</a></li>
                     </ul>
                 </nav>
-                <p><a href="#" class="resaltar">Discover Magic</a></p>
+                <p><a href="#" class="resaltar">Descubre la Magia</a></p>
             </div>
         </header>
+         -->
         <main>
             <section class="formulario">
-                <h2><strong>Add a Magical Creature</strong></h2>
-                <h4><strong>Complete the form to include a new creature in the bestiary</strong></h4>
+                <h2><strong>Añadir una Criatura Mágica</strong></h2>
+                <h4><strong>Completa el formulario para incluir una nueva criatura en el bestiario</strong></h4>
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <section class="row">
                         <fieldset class="personal_info">
-                            <legend>Creature Information</legend>
+                            <legend>Información de la Criatura</legend>
                             <div class="element">
-                                <label for="id_nombre">Name: </label>
+                                <label for="id_nombre" required>Nombre: </label>
                                 {{ form.nombre }}
                             </div>
                             <div class="element">
-                                <label for="id_descripcion">Description: </label>
+                                <label for="id_descripcion" required>Descripción: </label>
                                 {{ form.descripcion }}
                             </div>
                             <div class="element">
-                                <label for="id_tamano">Size: </label>
+                                <label for="id_tamano" required>Tamaño: </label>
                                 {{ form.tamano }}
                             </div>
                             <div class="element">
-                                <label for="id_raza">Breed: </label>
+                                <label for="id_raza" required>Raza: </label>
                                 {{ form.raza }}
                             </div>
                             <div class="element">
-                                <label for="id_categorias_peligro">Danger Categories: </label>
-                                {{ form.categorias_peligro }}
+                                <label for="id_categorias_peligro" required>Categorías de Peligro: </label>
+                                <div class="categorias-peligro">
+                                    {{ form.categorias_peligro }}
+                                </div>
                             </div>
                         </fieldset>
                     </section>
                     <section class="final_row">
-                        <div class="element">
-                            <input type="submit" value="Add Creature">
-                        </div>
+                        <!-- <div class="element"> 
+                            <input type="submit" value="Añadir Criatura">
+                        </div>-->
+                        <button type="submit" class="btn btn-success mb-5">Enviar</button>
+                        <button type="button" class="btn btn-secondary mb-5" onclick=location.href="{% url 'index' %}">Volver</button>
+                        <!-- <a href="{%url 'index' %}" class="btn btn-secondary mb-5">Volver</a> -->
                     </section>
-                </form>
+                </form>                
             </section>
         </main>
+        <!--  
         <footer>
             <div class="footer_left">
                 <div class="footer_1">
-                    <h2><strong>Hogwarts Bestiary</strong></h2>
-                    <h4>Creatures Research Center</h4>
+                    <h2><strong>Bestiario de Hogwarts</strong></h2>
+                    <h4>Centro de Investigación de Criaturas</h4>
                 </div>
                 <p>+44-20-12345678</p>
                 <p>info@bestiary.hogwarts.edu</p>
-                <p>Hogwarts Castle, Scotland</p>
+                <p>Castillo de Hogwarts, Escocia</p>
             </div>
             <div class="footer_mid_left">
-                <p><a href="#">Start</a></p>
-                <p><a href="#">About the Bestiary</a></p>
-                <p><a href="#">Research Teams</a></p>
+                <p><a href="#">Inicio</a></p>
+                <p><a href="#">Acerca del Bestiario</a></p>
+                <p><a href="#">Equipos de Investigación</a></p>
             </div>
             <div class="footer_mid_right">
                 <form action="#" method="post">
-                    <label for="newsletter">Subscribe to our Magical News</label>
+                    <label for="newsletter">Suscríbete a nuestras Noticias Mágicas</label>
                     <br>
                     <input type="email" name="email_addr" id="newsletter">
-                    <input type="submit" value="Subscribe">
+                    <input type="submit" value="Suscribirse">
                 </form>
             </div>
             <div class="footer_right">
-                <p>Follow us on:</p>
+                <p>Síguenos en:</p>
                 <a href="https://www.instagram.com/?hl=es" target="_blank">
-                    <img src="./images/logos.jpg" alt="Social media channels" class="Social_media">
+                    <img src="./images/logos.jpg" alt="Canales de redes sociales" class="Social_media">
                 </a>
-                <p>Privacy policy</p>
+                <p>Política de privacidad</p>
             </div>
         </footer>
+         -->
     </body>
 </html>

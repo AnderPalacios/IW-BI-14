@@ -52,11 +52,18 @@ def formularios(request):
     if request.method == 'POST':
         form = CriaturaForm(request.POST)
         if form.is_valid():
-            form.save()  
+            print("Formulario válido. Datos:", form.cleaned_data)  # Depuración
+            nueva_criatura = form.save()
+            form.save_m2m()  # Guardar relaciones Many-to-Many
+            return redirect('index')
+        else:
+            print("Errores del formulario:", form.errors)  # Depuración
+
     else:
-        form = CriaturaForm() 
-    
+        form = CriaturaForm()
+
     return render(request, 'formularios.html', {'form': form})
+
 
 
 def ver_criatura(request, criatura_id):

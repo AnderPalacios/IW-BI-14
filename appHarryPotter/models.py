@@ -23,14 +23,14 @@ class Raza(models.Model):
 
 class Criatura(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.TextField(max_length=300, blank=True, null=True)
+    descripcion = models.TextField(max_length=300)
     # Descripción del tamaño
     tamano = models.CharField(max_length=100)
     # Relaciones:
     # Campo para la relación many-to-many (una criatura puede aparecer en más de una categoría de peligro)
     categorias_peligro = models.ManyToManyField(CategoriaPeligro)
     # Campo para la relación one-to-many (una criatura pertenece a una única raza)
-    raza = models.ForeignKey(Raza, on_delete=models.CASCADE, null=True, blank = True)
+    raza = models.ForeignKey(Raza, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.nombre} (Tamaño: {self.tamano}, descripción: {self.descripcion}"

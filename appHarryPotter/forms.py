@@ -6,6 +6,6 @@ class CriaturaForm(forms.ModelForm):
         model = Criatura
         fields = ['nombre', 'descripcion', 'tamano', 'raza', 'categorias_peligro']  
         widgets = {
-            'categorias_peligro': forms.CheckboxSelectMultiple,
+            'categorias_peligro': forms.RadioSelect,
             'raza': forms.Select(),
         }
