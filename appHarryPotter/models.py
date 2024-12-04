@@ -23,7 +23,7 @@ class Raza(models.Model):
 
 class Criatura(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.TextField(max_length=300, blank=True, null=True)
+    descripcion = models.TextField(max_length=300)
     # Descripción del tamaño
     tamano = models.CharField(max_length=100)
     # Relaciones:

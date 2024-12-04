@@ -1,29 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import CategoriaPeligro, Raza, Criatura
+from .forms import CriaturaForm
 
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
-    # Aquí pasarle al index.html las razas y que pille una de ellas
-    criaturas_filtradas1 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (1, 2, 6) ORDER BY id DESC) GROUP BY raza_id ')
-    criaturas_filtradas2 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (4, 5, 7) ORDER BY id ASC) GROUP BY raza_id ')
-    # Fénix entre las aves mágicas
-    criaturas_filtradas3 = Criatura.objects.raw('SELECT * FROM appHarryPotter_Criatura WHERE raza_id = 3 AND nombre = "Fénix"')
-    criaturas_filtradas = list(criaturas_filtradas1) + list(criaturas_filtradas2) + list(criaturas_filtradas3)
-    criaturas_filtradas = sorted(criaturas_filtradas, key=lambda criatura: criatura.raza.id)
-    return render(request, 'index.html', {'lista_criaturas': criaturas_filtradas})
+    return render(request, 'index.html')
 
 
 def show_categorias(request):
-    categorias = get_list_or_404(CategoriaPeligro.objects.all())
+    categorias = CategoriaPeligro.objects.all()
     return render(request, 'categorias.html', {'lista_categorias': categorias})
 
 def criaturas_por_categoria(request, categoria_id):
     # Recuperar la categoría de peligro específica
     categoria = get_object_or_404(CategoriaPeligro, id=categoria_id)
     # Recuperar las criaturas asociadas a esta categoría
-    criaturas = get_list_or_404(Criatura.objects.filter(categorias_peligro=categoria))
+    criaturas = Criatura.objects.filter(categorias_peligro=categoria)
 
     # Renderizar una plantilla con la información
     return render(request, 'criaturas_por_categoria.html', {
@@ -32,7 +26,7 @@ def criaturas_por_categoria(request, categoria_id):
     })
 
 def show_razas(request):
-    razas = get_list_or_404(Raza.objects.all())
+    razas = Raza.objects.all()
     return render(request, 'razas.html', {'lista_razas': razas})
 
 def criaturas_por_raza(request, raza_id):
@@ -40,7 +34,7 @@ def criaturas_por_raza(request, raza_id):
     raza = get_object_or_404(Raza, id=raza_id)
     
     # Recuperar las criaturas asociadas a esta raza
-    criaturas = get_list_or_404(Criatura.objects.filter(raza=raza))
+    criaturas = Criatura.objects.filter(raza=raza)
     
     # Renderizar una plantilla con la información
     return render(request, 'criaturas_por_raza.html', {
@@ -49,9 +43,30 @@ def criaturas_por_raza(request, raza_id):
     })
 
 def show_criaturas(request):
-    criaturas = get_list_or_404(Criatura.objects.all())
-    return render(request, 'criaturas.html', {'lista_criaturas': criaturas})
+    criaturas = Criatura.objects.all()
+    categorias = CategoriaPeligro.objects.all()
+    context = {'lista_criaturas': criaturas, 'lista_categorias': categorias}
+    return render(request, 'criaturas.html', context)
+
+def formularios(request):
+    if request.method == 'POST':
+        form = CriaturaForm(request.POST)
+        if form.is_valid():
+            print("Formulario válido. Datos:", form.cleaned_data)  # Depuración
+            nueva_criatura = form.save()
+            form.save_m2m()  # Guardar relaciones Many-to-Many
+            return redirect('index')
+        else:
+            print("Errores del formulario:", form.errors)  # Depuración
+
+    else:
+        form = CriaturaForm()
+
+    return render(request, 'formularios.html', {'form': form})
+
+
 
 def ver_criatura(request, criatura_id):
     criatura = get_object_or_404(Criatura, pk=criatura_id)
     return render(request, 'criatura.html', {'criatura': criatura})
+
