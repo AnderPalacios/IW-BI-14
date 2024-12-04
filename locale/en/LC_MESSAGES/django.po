@@ -1,0 +1,95 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+## Traducciones del header
+msgid "Bestiario de Harry Potter"
+msgstr "Harry Potter Bestiary "
+
+msgid "Bestiario"
+msgstr "Bestiary"
+
+## Traducciones del navegador
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Criaturas"
+msgstr "Creatures"
+
+msgid "Categorías"
+msgstr "Categories"
+
+msgid "Razas"
+msgstr "Breeds"
+
+msgid "Información"
+msgstr "Information"
+
+msgid "Acerca del Bestiario"
+msgstr "About the Bestiary"
+
+msgid "Bestiario de Hogwarts"
+msgstr "Hogwarts Bestiary"
+
+msgid "Bienvenido al Bestiario de Harry Potter"
+msgstr "Welcome to the Harry Potter Bestiary"
+
+msgid "Tus criaturas favoritas."
+msgstr "Your favorite creatures."
+
+msgid "Historia"
+msgstr "History"
+
+msgid "Descubre las razas"
+msgstr "Discover the breeds"
+ 
+msgid "Bestias y Magia"
+msgstr "Beasts and Magic"
+
+msgid "Explorando criaturas mágicas desde tiempos inmemoriales."
+msgstr "Exploring magical creatures since immemorial times."
+
+msgid "Criaturas y Razas"
+msgstr "Creatures and Breeds"
+
+msgid "Descubre las diferentes Razas"
+msgstr "Discover the different Breeds"
+
+msgid "Descripciones de Bestias (Pulsa en el nombre para saber más)"
+msgstr "Beast Descriptions (Click on the name to learn more)"
+
+msgid "Bestias y características"
+msgstr "Beasts and characteristics"
+
+
+# Traducciones del footer
+msgid "¿Dónde encontrarnos?"
+msgstr "Where to find us?"
+
+msgid "Distrito Mágico Subterráneo, Ala Norte"
+msgstr "Underground Magic District, North Wing"
+
+msgid "(Acceso restringido: Aparición únicamente para empleados registrados)"
+msgstr "(Restricted access: Appearance only for registered employees)"
+
+msgid "Contacto"
+msgstr "Contact"
+
+msgid "Teléfono:"
+msgstr "Phone:"
+
+msgid "Horario de atención."
+msgstr "Office hours."
+
+msgid "Lunes - Viernes"
+msgstr "Monday - Friday"
+
+msgid "Sábado"
+msgstr "Saturday"
+
+msgid "Domingo"
+msgstr "Sunday"
+
+msgid "Cerrado"
+msgstr "Closed"

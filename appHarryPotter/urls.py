@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+# Definimos las rutas para que soporten las traducciones
 urlpatterns = [
  path('', views.index, name='index'),
  path('appHarryPotter/categorias', views.show_categorias, name="categorias"),
