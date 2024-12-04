@@ -41,15 +41,6 @@ INSTALLED_APPS = [
     "appHarryPotter"
 ]
 
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
 
 ROOT_URLCONF = "IW_BI_14.urls"
 
@@ -112,6 +103,28 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
+
+# Lista de idiomas soportados
+LANGUAGES = [
+    ("es", gettext_lazy("Español")),
+    ("en-us", gettext_lazy("English")),
+]
+
+# En esta carpeta se almacenan los archivos de traduccion
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.middleware.locale.LocaleMiddleware", # traducciones dinamicas
+]
 
 
 # Static files (CSS, JavaScript, Images)
