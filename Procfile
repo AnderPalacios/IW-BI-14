@@ -1,0 +1,1 @@
+web: gunicorn IW_BI_14.wsgi:application--workers 3 --threads 2 --timeout 120
