@@ -163,7 +163,7 @@ Bootstrap 5 HTML CSS Template
 
                 <section class="barista-section section-padding section-bg" id="razas">
                     <div class="container">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center", id="hola">
 
                             <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
                                 <em class="text-white">Criaturas y Razas</em>
@@ -171,63 +171,65 @@ Bootstrap 5 HTML CSS Template
                                 <h2 class="text-white">Descubre las diferentes Razas</h2>
                             </div>
                             <!--  -->
-                            {% if lista_criaturas %}
-                                {% for criatura in lista_criaturas %}
-                                    <div class="col-lg-3 col-md-6 col-12 mb-4">
-                                        <div class="team-block-wrap">
-                                            <div class="team-block-info d-flex flex-column">
-                                                <div class="d-flex mt-auto mb-3">
-                                                    <h4 class="text-white mb-0">{{ criatura.nombre }}</h4>
-                                                    <p class="badge ms-4"><em>{{ criatura.raza.nombre }}</em></p>
+                            <!-- <div class="criaturas-container"> -->
+                                {% if lista_criaturas %}
+                                    {% for criatura in lista_criaturas %}
+                                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                                            <div class="team-block-wrap">
+                                                <div class="team-block-info d-flex flex-column">
+                                                    <div class="d-flex mt-auto mb-3">
+                                                        <h4 class="text-white mb-0">{{ criatura.nombre }}</h4>
+                                                        <p class="badge ms-4"><em>{{ criatura.raza.nombre }}</em></p>
+                                                    </div>
+                                                    {% if criatura.nombre == "Troll" %}
+                                                        <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
+                                                    {% elif criatura.nombre == "Hombre lobo" %}
+                                                        <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
+                                                    {% elif criatura.nombre == "Fénix" %}
+                                                        <p class="text-white mb-0">Ave inmortal que renace de sus cenizas.</p>
+                                                    {% elif criatura.nombre == "Colacuerno Húngaro" %}
+                                                        <p class="text-white mb-0">Dragón negro más temido.</p>
+                                                    {% elif criatura.nombre == "Dementor" %}
+                                                        <p class="text-white mb-0">Ser oscuro que arrebata el alma de sus víctimas.</p>
+                                                    {% elif criatura.nombre == "Sirena" %}
+                                                        <p class="text-white mb-0">Seres inteligentes que habitan en lagos mágicos.</p>
+                                                    {% elif criatura.nombre == "Centauro" %}
+                                                        <p class="text-white mb-0">Seres híbridos, expertos en astronomía.</p>
+                                                    {% else %}
+                                                        <p>No hay descripción para esta criatura</p>
+                                                    {% endif %}
                                                 </div>
-                                                {% if criatura.nombre == "Troll" %}
-                                                    <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
-                                                {% elif criatura.nombre == "Hombre lobo" %}
-                                                    <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
-                                                {% elif criatura.nombre == "Fénix" %}
-                                                    <p class="text-white mb-0">Ave inmortal que renace de sus cenizas.</p>
-                                                {% elif criatura.nombre == "Colacuerno Húngaro" %}
-                                                    <p class="text-white mb-0">Dragón negro más temido.</p>
-                                                {% elif criatura.nombre == "Dementor" %}
-                                                    <p class="text-white mb-0">Ser oscuro que arrebata el alma de sus víctimas.</p>
-                                                {% elif criatura.nombre == "Sirena" %}
-                                                    <p class="text-white mb-0">Seres inteligentes que habitan en lagos mágicos.</p>
-                                                {% elif criatura.nombre == "Centauro" %}
-                                                    <p class="text-white mb-0">Seres híbridos, expertos en astronomía.</p>
-                                                {% else %}
-                                                    <p>No hay descripción para esta criatura</p>
-                                                {% endif %}
-                                            </div>
 
-                                            <div class="team-block-image-wrap">
-                                                {% if criatura.nombre == "Troll" %}
-                                                    <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Hombre lobo" %}
-                                                <img src="{% static 'images/hombre_lobo.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Fénix" %}
-                                                <img src="{% static 'images/fenix.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Colacuerno Húngaro" %}
-                                                <img src="{% static 'images/colacuerno.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Dementor" %}
-                                                <img src="{% static 'images/dementor.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Sirena" %}
-                                                <img src="{% static 'images/sirena.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
-                                                {% if criatura.nombre == "Centauro" %}
-                                                <img src="{% static 'images/centauro.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                {% endif %}
+                                                <div class="team-block-image-wrap">
+                                                    {% if criatura.nombre == "Troll" %}
+                                                        <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Hombre lobo" %}
+                                                    <img src="{% static 'images/hombre_lobo.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Fénix" %}
+                                                    <img src="{% static 'images/fenix.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Colacuerno Húngaro" %}
+                                                    <img src="{% static 'images/colacuerno.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Dementor" %}
+                                                    <img src="{% static 'images/dementor.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Sirena" %}
+                                                    <img src="{% static 'images/sirena.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                    {% if criatura.nombre == "Centauro" %}
+                                                    <img src="{% static 'images/centauro.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                                    {% endif %}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                {% endfor %}
-                            {% else %}
-                                <p>No hay criaturas para estas razas.</p>
-                            {% endif %}
+                                    {% endfor %}
+                                {% else %}
+                                    <p>No hay criaturas para estas razas.</p>
+                                {% endif %}
+                            <!-- </div> -->
                             <!--  -->
 
                         </div>
@@ -431,5 +433,33 @@ Bootstrap 5 HTML CSS Template
                 setInterval(rotateItems, 3000);
             });
         </script> -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const container = document.querySelector('#hola');
+                const items = Array.from(container.children); // Obtener todos los elementos
+        
+                function rotateBoxes() {
+                    if (items.length > 1) {
+                        const firstItem = items.shift(); // Sacar el primer elemento de la lista
+                        firstItem.style.transition = "transform 1s ease, opacity 1s ease"; 
+                        firstItem.style.transform = "rotate(360deg) scale(0.8)"; // Rotar y reducir tamaño
+                        firstItem.style.opacity = "0"; // Desaparecer gradualmente
+        
+                        // Al final de la animación, recolocar el elemento
+                        firstItem.addEventListener('transitionend', function handler() {
+                            firstItem.style.transition = "none"; // Desactivar transiciones temporalmente
+                            firstItem.style.transform = "rotate(0deg) scale(1)"; // Reiniciar transformaciones
+                            firstItem.style.opacity = "1"; // Hacer visible nuevamente
+                            container.appendChild(firstItem); // Mover al final del contenedor
+                            items.push(firstItem); // Añadirlo al final de la lista
+                            firstItem.removeEventListener('transitionend', handler); // Limpiar el evento
+                        });
+                    }
+                }
+        
+                // Llamar a la función cada 3 segundos
+                setInterval(rotateBoxes, 3000);
+            });
+        </script>
     </body>
 </html>
