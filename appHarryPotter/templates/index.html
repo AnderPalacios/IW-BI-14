@@ -411,67 +411,9 @@ Bootstrap 5 HTML CSS Template
         <script src="js/vegas.min.js"></script>
         <!-- <script src="js/custom.js"></script> -->
         
-        <!-- <script src="{% static 'js/custom.js' %}"></script> -->
-        <!-- Nuestros scrips -->
+
+        <!-- Nuestros scrips JAVASCRIPT-->
          <script src="{% static 'js/script_jquery.js' %}"></script>
-         <!-- <script>
-            alert("njdnsjn");
-            document.addEventListener("DOMContentLoaded", function () {
-                const container = document.querySelector('.team-block-wrap');
-                const items = Array.from(container.children); // Lista de elementos
-        
-                // Función para rotar los elementos
-                function rotateItems() {
-                    if (items.length > 1) {
-                        const firstItem = items.shift(); // Saca el primer elemento
-                        container.appendChild(firstItem); // Muévelo al final
-                        items.push(firstItem); // Actualiza la lista
-                    }
-                }
-        
-                // Rotar cada 3 segundos
-                setInterval(rotateItems, 3000);
-            });
-        </script> -->
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const container = document.querySelector('#rotar_razas');
-                const items = Array.from(container.children).filter(item => item.id !== "no_rotar");
-                let counter = 0; // Contador que inicia en 0 (par)
-
-                function rotateBoxes() {
-                    if (items.length > 1) {
-                        const firstItem = items.shift(); // Sacar el primer elemento de la lista
-                        counter++; // Incrementar el contador
-
-                        // Determinar si el contador es par o impar
-                        if (counter % 2 === 0) {
-                            // Efectos para cuando el contador es par (efectos 3 y 4)
-                            firstItem.style.transition = "transform 1s ease, opacity 1s ease";
-                            firstItem.style.transform = "rotateY(180deg) scale(0.8)"; // Flip 3D y reducción de tamaño
-                        } else {
-                            // Efectos para cuando el contador es impar (efectos 1 y 2)
-                            firstItem.style.transition = "transform 1s ease, opacity 1s ease";
-                            firstItem.style.transform = "rotate(360deg) scale(0.8)"; // Rotación y reducción de tamaño
-                        }
-
-                        firstItem.style.opacity = "0"; // Desaparecer gradualmente
-
-                        // Al final de la animación, recolocar el elemento
-                        firstItem.addEventListener('transitionend', function handler() {
-                            firstItem.style.transition = "transform 0.5s ease"; // Desactivar transiciones temporalmente
-                            firstItem.style.transform = "rotate(0deg) scale(1)"; // Reiniciar transformaciones
-                            firstItem.style.opacity = "1"; // Hacer visible nuevamente
-                            container.appendChild(firstItem); // Mover al final del contenedor
-                            items.push(firstItem); // Añadirlo al final de la lista
-                            firstItem.removeEventListener('transitionend', handler); // Limpiar el evento
-                        });
-                    }
-                }
-
-                // Llamar a la función cada 3 segundos
-                setInterval(rotateBoxes, 3000);
-            });
-        </script>
+        <script src="{% static 'js/rotar_razas.js' %}"></script>
     </body>
 </html>

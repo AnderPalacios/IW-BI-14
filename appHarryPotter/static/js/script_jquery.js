@@ -1,37 +1,3 @@
-// $(document).ready(function() {
-
-//     let images = $('#scroll img'); // Selecciona todas las imágenes del contenedor
-//     let index = 0;
-
-//     function changeBackground() {
-//         // Cambia el fondo de la sección con la imagen actual
-//         let imgSrc = $(images[index]).attr('src');
-//         $('.hero-section').css('background-image', `url(${imgSrc})`);
-
-//         // Incrementa el índice para mostrar la siguiente imagen
-//         index = (index + 1) % images.length;
-//     }
-
-//     // Inicia la rotación de las imágenes
-//     changeBackground();
-//     setInterval(changeBackground, 3000); // Cambia cada 3 segundos
-// });
-
-// $(document).ready(function () {
-//     $('#scroll').cycle({
-//         fx: 'scrollDown', // Tipo de transición
-//         speed: 500,       // Velocidad de la transición
-//         timeout: 3000,    // Tiempo entre transiciones
-//         before: function (currSlide, nextSlide) {
-//             // Obtén la imagen del próximo slide
-//             let imgSrc = $(nextSlide).attr('src');
-//             // Cambia el fondo del contenedor principal
-//             $('.hero-section').css('background-image', `url(${imgSrc})`);
-//         }
-//     });
-// });
-
-
 $(document).ready(function () {
     let images = $('#scroll img'); // Selecciona las imágenes
     let index = 0;
@@ -85,13 +51,14 @@ $(document).ready(function () {
 
 
     //Selector del <div> oculto
-    // alert("ndjafhadbfhbdhbb");
     $("#p1").fadeIn("slow");
     setTimeout(function () {
         $("#p2").fadeIn("slow");
     }, 1500); 
 
-    // alert("HOLAAAAAAAAAAAAAAAA");
+
+
+
     $('.ratio').css({
         position: 'relative',
         top: '-400px', // Comienza un poco más arriba
@@ -111,39 +78,8 @@ $(document).ready(function () {
 
 
     // Rotación de las razas
-    // alert("ncjcndjncd");
-    // const $container = $('.barista-section .row'); // Contenedor de los bloques
-    // const $items = $container.find('.team-block-wrap'); // Obtener todos los elementos
+    // En otro .js aparte
 
-    // function rotateBlocks() {
-    //     if ($items.length > 1) {
-    //         // const $firstItem = $items.first(); // Seleccionar el primer elemento
-    //         const $firstItem = $items.eq(3)
-    //         // alert($firstItem.html());
-    //         $firstItem.animate(
-    //             { opacity: 0 },
-    //             {
-    //                 duration: 1000,
-    //                 step: function (now, fx) {
-    //                     if (fx.prop === "opacity") {
-    //                         const rotation = (1 - now) * 360; // Rotación inversa a la opacidad
-    //                         $(this).css("transform", `rotateY(${rotation}deg) scale(${0.8 + 0.2 * now})`);
-    //                     }
-    //                 },
-    //                 complete: function () {
-    //                     // $items.each(function(index, element) {
-    //                     //     alert($(element).prop('outerHTML')); // Muestra el HTML completo de cada elemento
-    //                     // });
-    //                     $firstItem.css("opacity", 1); // Restaurar opacidad
-    //                     $firstItem.css("transform", "rotateY(0deg) scale(1)"); // Restaurar transformaciones
-    //                     $container.append($firstItem); // Mover al final
-    //                 },
-    //             }
-    //         );
-    //     }
-    // }
-
-    // setInterval(rotateBlocks, 3000);
 
 
 
