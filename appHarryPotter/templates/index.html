@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
             
-        <title>{%trans "Bestiario Harry Potter" %}</title>
+        <title>{%trans "Bestiario de Harry Potter" %}</title>
 
         <!-- CSS FILES -->                
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +75,7 @@ Bootstrap 5 HTML CSS Template
                                     {%trans "Criaturas" %}
                                 </a>
                                 <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'categorias' %}">
-                                    {%trans "Categoerías" %}
+                                    {%trans "Categorías" %}
                                 </a>
                                 <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'razas' %}">
                                     {%trans "Razas" %}
@@ -103,7 +103,7 @@ Bootstrap 5 HTML CSS Template
                             <div class="col-lg-6 col-12 mx-auto">
                                 <em class="small-text">{%trans "Bienvenido al Bestiario de Harry Potter" %}</em>
                                 
-                                <h1>{%trans "Harry Potter Bestiario" %}</h1>
+                                <h1>{%trans "Bestiario de Harry Potter" %}</h1>
 
                                 <p class="text-white mb-4 pb-lg-2">
                                     {%blocktrans%}Tus criaturas <em>favoritas</em>. {%endblocktrans%}
@@ -138,7 +138,7 @@ Bootstrap 5 HTML CSS Template
                                     </video>
                                     
                                     <div class="about-video-info d-flex flex-column">
-                                        <h4 class="mt-auto">Explorando criaturas mágicas desde tiempos inmemoriales.</h4>
+                                        <h4 class="mt-auto">{% trans "Explorando criaturas mágicas desde tiempos inmemoriales." %}</h4>
 
                                         <!-- <h4>El bestiario más fascinante del mundo mágico.</h4> -->
                                     </div>
@@ -244,9 +244,9 @@ Bootstrap 5 HTML CSS Template
                         <div class="row justify-content-center">
 
                             <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
-                                <em class="text-white">Descripciones de Bestias <br> (Pulsa en el nombre para saber más)</em>
+                                {% trans '<em class="text-white">Descripciones de Bestias <br> (Pulsa en el nombre para saber más)</em>' %}
 
-                                <h2 class="text-white">Bestias y características</h2>
+                                <h2 class="text-white">{%trans "Bestias y características" %}</h2>
                             </div>
                             <!-- "{% static 'images/centauro.jpg' %}" -->
                             <div class="timeline">
@@ -258,7 +258,7 @@ Bootstrap 5 HTML CSS Template
 
                                                 <div class="">
                                                     <h6 class="text-white mb-0">
-                                                        <a href="{% url 'criaturas' %}" class="text-white text-decoration-none">Criaturas</a>
+                                                        <a href="{% url 'criaturas' %}" class="text-white text-decoration-none">{% trans "Criaturas" %}</a>
                                                     </h6>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@ Bootstrap 5 HTML CSS Template
 
                                                 <div class="">
                                                     <h6 class="text-white mb-0">
-                                                        <a href="{% url 'razas' %}" class="text-white text-decoration-none">Razas</a>
+                                                        <a href="{% url 'razas' %}" class="text-white text-decoration-none">{% trans "Razas" %}</a>
                                                     </h6>
                                                 </div>
                                             </div>
@@ -309,7 +309,7 @@ Bootstrap 5 HTML CSS Template
 
                                                 <div class="">
                                                     <h6 class="text-white mb-0">
-                                                        <a href="{% url 'categorias' %}" class="text-white text-decoration-none">Categorías</a>
+                                                        <a href="{% url 'categorias' %}" class="text-white text-decoration-none">{% trans "Categorías" %}</a>
                                                     </h6>
                                                 </div>
                                             </div>
