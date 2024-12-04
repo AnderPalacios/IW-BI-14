@@ -145,4 +145,35 @@ $(document).ready(function () {
 
     // setInterval(rotateBlocks, 3000);
 
+
+
+    // MOVER LOS ELEMENTOS DE DESCRIPCIONES DE ENTIDADES
+    // function moverElementos() {
+    //     // Obtener las posiciones actuales de cada contenedor de la timeline
+    //     var firstOffset = $('.timeline-container-left').eq(0).offset();
+    //     var secondOffset = $('.timeline-container-right').eq(0).offset();
+    //     var thirdOffset = $('.timeline-container-left').eq(1).offset();
+
+    //     // Mover el primer div al segundo
+    //     $('.timeline-container-left').eq(0).animate({
+    //         top: secondOffset.top - firstOffset.top,
+    //         left: secondOffset.left - firstOffset.left
+    //     }, 1000);
+
+    //     // Mover el segundo div al tercero
+    //     $('.timeline-container-right').eq(0).animate({
+    //         top: thirdOffset.top - secondOffset.top,
+    //         left: thirdOffset.left - secondOffset.left
+    //     }, 1000);
+
+    //     // Mover el tercer div al primero
+    //     $('.timeline-container-left').eq(1).animate({
+    //         top: firstOffset.top - thirdOffset.top,
+    //         left: firstOffset.left - thirdOffset.left
+    //     }, 1000);
+    // }
+
+    // // Llamamos a la función para mover los elementos al cargarse la página
+    // moverElementos();
+
 });

@@ -163,9 +163,9 @@ Bootstrap 5 HTML CSS Template
 
                 <section class="barista-section section-padding section-bg" id="razas">
                     <div class="container">
-                        <div class="row justify-content-center", id="hola">
+                        <div class="row justify-content-center" id="rotar_razas">
 
-                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2" id="no_rotar">
                                 <em class="text-white">Criaturas y Razas</em>
 
                                 <h2 class="text-white">Descubre las diferentes Razas</h2>
@@ -435,19 +435,31 @@ Bootstrap 5 HTML CSS Template
         </script> -->
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const container = document.querySelector('#hola');
-                const items = Array.from(container.children); // Obtener todos los elementos
-        
+                const container = document.querySelector('#rotar_razas');
+                const items = Array.from(container.children).filter(item => item.id !== "no_rotar");
+                let counter = 0; // Contador que inicia en 0 (par)
+
                 function rotateBoxes() {
                     if (items.length > 1) {
                         const firstItem = items.shift(); // Sacar el primer elemento de la lista
-                        firstItem.style.transition = "transform 1s ease, opacity 1s ease"; 
-                        firstItem.style.transform = "rotate(360deg) scale(0.8)"; // Rotar y reducir tamaño
+                        counter++; // Incrementar el contador
+
+                        // Determinar si el contador es par o impar
+                        if (counter % 2 === 0) {
+                            // Efectos para cuando el contador es par (efectos 3 y 4)
+                            firstItem.style.transition = "transform 1s ease, opacity 1s ease";
+                            firstItem.style.transform = "rotateY(180deg) scale(0.8)"; // Flip 3D y reducción de tamaño
+                        } else {
+                            // Efectos para cuando el contador es impar (efectos 1 y 2)
+                            firstItem.style.transition = "transform 1s ease, opacity 1s ease";
+                            firstItem.style.transform = "rotate(360deg) scale(0.8)"; // Rotación y reducción de tamaño
+                        }
+
                         firstItem.style.opacity = "0"; // Desaparecer gradualmente
-        
+
                         // Al final de la animación, recolocar el elemento
                         firstItem.addEventListener('transitionend', function handler() {
-                            firstItem.style.transition = "none"; // Desactivar transiciones temporalmente
+                            firstItem.style.transition = "transform 0.5s ease"; // Desactivar transiciones temporalmente
                             firstItem.style.transform = "rotate(0deg) scale(1)"; // Reiniciar transformaciones
                             firstItem.style.opacity = "1"; // Hacer visible nuevamente
                             container.appendChild(firstItem); // Mover al final del contenedor
@@ -456,7 +468,7 @@ Bootstrap 5 HTML CSS Template
                         });
                     }
                 }
-        
+
                 // Llamar a la función cada 3 segundos
                 setInterval(rotateBoxes, 3000);
             });
