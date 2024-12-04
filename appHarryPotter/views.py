@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import CategoriaPeligro, Raza, Criatura
+from .forms import CriaturaForm
 
 from django.http import HttpResponse
 # Create your views here.
@@ -43,8 +44,29 @@ def criaturas_por_raza(request, raza_id):
 
 def show_criaturas(request):
     criaturas = Criatura.objects.all()
-    return render(request, 'criaturas.html', {'lista_criaturas': criaturas})
+    categorias = CategoriaPeligro.objects.all()
+    context = {'lista_criaturas': criaturas, 'lista_categorias': categorias}
+    return render(request, 'criaturas.html', context)
+
+def formularios(request):
+    if request.method == 'POST':
+        form = CriaturaForm(request.POST)
+        if form.is_valid():
+            print("Formulario válido. Datos:", form.cleaned_data)  # Depuración
+            nueva_criatura = form.save()
+            form.save_m2m()  # Guardar relaciones Many-to-Many
+            return redirect('index')
+        else:
+            print("Errores del formulario:", form.errors)  # Depuración
+
+    else:
+        form = CriaturaForm()
+
+    return render(request, 'formularios.html', {'form': form})
+
+
 
 def ver_criatura(request, criatura_id):
     criatura = get_object_or_404(Criatura, pk=criatura_id)
     return render(request, 'criatura.html', {'criatura': criatura})
+

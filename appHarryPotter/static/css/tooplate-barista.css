@@ -537,7 +537,7 @@ strong {
 /*---------------------------------------
   HERO        
 -----------------------------------------*/
-.hero-section {
+/* .hero-section {
   background-color: var(--dark-color);
   position: relative;
   overflow: hidden;
@@ -546,7 +546,19 @@ strong {
   background-image: url('../images/fondo3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+} */
+/* Este es el que me ha dado chat */
+.hero-section {
+  background-color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+  min-height: 620px;
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
 }
+
 
 .hero-section::after {
   border-radius: var(--border-radius-medium);
