@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+## Traducciones del header
+msgid "Bestiario de Harry Potter"
+msgstr "Harry Potter Bestiary "
+
+msgid "Bestiario"
+msgstr "Bestiary"
+
+## Traducciones del navegador
+msgid "Inicio"
+msgstr "Home"
+
+msgid "Acerda del Bestiario"
+msgstr "About the Bestiary"
+
+msgid "Bestiario de Hogwarts"
+msgstr "Hogwarts Bestiary"
+
+msgid "Criaturas"
+msgstr "Creatures"
+
+# Traducciones del footer
+msgid "¿Dónde encontrarnos?"
+msgstr "Where to find us?"
+
+msgid "Distrito Mágico Subterráneo, Ala Norte"
+msgstr "Underground Magic District, North Wing"
+
+msgid "(Acceso restringido: Aparición únicamente para empleados registrados)"
+msgstr "(Restricted access: Appearance only for registered employees)"
+
+msgid "Contacto"
+msgstr "Contact"
+
+msgid "Teléfono:"
+msgstr "Phone:"
+
+msgid "Horario de atención."
+msgstr "Office hours."
+
+msgid "Lunes - Viernes"
+msgstr "Monday - Friday"
+
+msgid "Sábado"
+msgstr "Saturday"
+
+msgid "Domingo"
+msgstr "Sunday"
+
+msgid "Cerrado"
+msgstr "Closed"
