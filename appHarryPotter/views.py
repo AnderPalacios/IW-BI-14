@@ -60,17 +60,23 @@ def formularios(request):
     if request.method == 'POST':
         form = CriaturaForm(request.POST)
         if form.is_valid():
-            print("Formulario válido. Datos:", form.cleaned_data)  # Depuración
-            nueva_criatura = form.save()
-            form.save_m2m()  # Guardar relaciones Many-to-Many
+            print("Formulario válido. Datos:", form.cleaned_data)
+            # Guarda la instancia principal de Criatura
+            nueva_criatura = form.save(commit=True)  # Guarda directamente la instancia
+            
+            # Asigna las categorías de peligro manualmente
+            categorias_peligro = form.cleaned_data.get('categorias_peligro')
+            if categorias_peligro:
+                nueva_criatura.categorias_peligro.set(categorias_peligro)  # Asignar las relaciones Many-to-Many
+
             return redirect('index')
         else:
-            print("Errores del formulario:", form.errors)  # Depuración
-
+            print("Errores del formulario:", form.errors)
     else:
         form = CriaturaForm()
 
     return render(request, 'formularios.html', {'form': form})
+
 
 
 

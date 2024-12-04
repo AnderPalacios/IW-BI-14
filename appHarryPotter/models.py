@@ -28,7 +28,7 @@ class Criatura(models.Model):
     tamano = models.CharField(max_length=100)
     # Relaciones:
     # Campo para la relación many-to-many (una criatura puede aparecer en más de una categoría de peligro)
-    categorias_peligro = models.ManyToManyField(CategoriaPeligro)
+    categorias_peligro = models.ManyToManyField(CategoriaPeligro, blank=True)
     # Campo para la relación one-to-many (una criatura pertenece a una única raza)
     raza = models.ForeignKey(Raza, on_delete=models.CASCADE)
 
