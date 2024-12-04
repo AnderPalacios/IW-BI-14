@@ -53,11 +53,30 @@
                                 {{ form.raza }}
                             </div>
                             <div class="element">
-                                <label for="id_categorias_peligro" required>Categorías de Peligro: </label>
+                                <label for="id_categorias_peligro" required>Categorías de Peligro:</label>
                                 <div class="categorias-peligro">
-                                    {{ form.categorias_peligro }}
+                                    {% for checkbox in form.categorias_peligro %}
+                                        <div>
+                                            {{ checkbox.tag }} {{ checkbox.choice_label }}
+                                        </div>
+                                    {% endfor %}
                                 </div>
+                                {% if form.categorias_peligro.errors %}
+                                    <div class="error">
+                                        {{ form.categorias_peligro.errors }}
+                                    </div>
+                                {% endif %}
                             </div>
+                            <!-- Añadir un script para validar que al menos una categoría está seleccionada -->
+                            <script>
+                                document.querySelector('form').addEventListener('submit', function(event) {
+                                    const checkboxes = document.querySelectorAll('input[name="categorias_peligro"]:checked');
+                                    if (checkboxes.length === 0) {
+                                        event.preventDefault();
+                                        alert("Debe seleccionar al menos una categoría de peligro.");
+                                    }
+                                });
+                            </script>
                         </fieldset>
                     </section>
                     <section class="final_row">
