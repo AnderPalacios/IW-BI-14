@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block nombre_portada %} <h2 class="text-white">Categorías de peligro</h2> {% endblock %}
 
@@ -9,7 +9,7 @@
         <ul>
         {% for c in lista_categorias %}
             <li>
-                <p>{{c}}</p>
+                <p class="categorias_caer">{{c}}</p>
             </li>
         {% endfor %}
         </ul>
@@ -44,3 +44,5 @@
     <a href="{% url 'razas' %}">Volver a razas</a>
 </div> 
 {% endblock %}
+
+{% block extras %} <script src="{% static 'js/categorias_fall.js' %}"></script> {% endblock %}

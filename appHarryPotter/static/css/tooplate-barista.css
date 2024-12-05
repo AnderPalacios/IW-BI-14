@@ -1208,7 +1208,7 @@ strong {
 }
 
 
-.criaturas_rc li{
+.criaturas_rc li {
   color: white;
 }
 
@@ -1224,6 +1224,12 @@ strong {
   font-style: italic; 
 }
 
+.criaturas_rc li a#cambio_font {
+  color: black; 
+  font-size: 14px; 
+  text-decoration: none; 
+}
+
 #cr_raza {
   color: white; 
   font-size: 17px; 
@@ -1237,6 +1243,41 @@ strong {
   text-decoration: underline; 
   font-style: italic; 
 }
+
+/*---------------------------------------
+  Diálogos              
+-----------------------------------------*/
+
+    /* Estilo personalizado del cuadro de diálogo */
+  .custom-dialog {
+      color: black;
+      background-color: beige;
+      color: #333;
+  }
+  .custom-dialog {
+      border-radius: 10px;
+  }
+  #texto_dialogo {
+      color: black;
+      font-size: 14px; 
+      line-height: 1.5; 
+  }
+
+  #medio_header{
+      color: black;
+  }
+
+
+  #category-header {
+      color: black;
+      font-size: 16px;
+  }
+
+  #category-description {
+      color: black;
+      font-size: 14px;
+      line-height: 1.5;
+  }
 
 /*---------------------------------------
   RESPONSIVE STYLES               

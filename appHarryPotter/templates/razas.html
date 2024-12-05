@@ -9,7 +9,8 @@
         <ul>
         {% for r in lista_razas %}
             <li>
-                <p>{{r}}</p>
+                <!-- <p>{{r}}</p> -->
+                <p class="texto-caer">{{ r }}</p>
             </li>
         {% endfor %}
         </ul>
@@ -38,3 +39,5 @@
     <a href="{% url 'criaturas' %}">Visitar las criaturas</a>
 </div> 
 {% endblock %}
+
+{% block extras %} <script src="{% static 'js/razas_fall.js' %}"></script> {% endblock %}

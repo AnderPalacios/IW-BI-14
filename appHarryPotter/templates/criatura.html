@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block descripciones %}
 <div class="desc-criaturas">
@@ -13,16 +14,42 @@
     <p><strong>Categorías de peligro:</strong></p>
     <ul>
         {% for cat in criatura.categorias_peligro.all %}
-            <li><a href="{% url 'criaturas_por_categoria' cat.id %}">{{ cat.nombre }}</a></li>
+            <!-- <li><a href="{% url 'criaturas_por_categoria' cat.id %}">{{ cat.nombre }}</a></li> -->
+            <li>
+                <a href="#" class="category-link ui-state-default ui-corner-all" id="cambio_font"
+                   data-url="{% url 'criaturas_por_categoria' cat.id %}" 
+                   data-name="{{ cat.nombre }}">
+                   {{ cat.nombre }}
+                </a>
+            </li>
         {% endfor %}
     </ul>
-    <p><strong>Raza:</strong> <a href="{% url 'criaturas_por_raza' criatura.raza.id %}" id="cr_raza">{{ criatura.raza.nombre }}</a></p>
-    
+    <p><strong>Raza:</strong> 
+        <a href="#" id="dialog_link" class="ui-state-default ui-corner-all" data-url="{% url 'criaturas_por_raza' criatura.raza.id %}" >{{ criatura.raza.nombre }}</a>
+    </p>
 
     <a href="{% url 'categorias' %}">Volver a categorías</a>
     <br>
-    <a href="{% url 'criaturas_por_raza' criatura.raza.id %}">Ver más criaturas de esta raza</a> <!--Utilizamos los nombres auxiliares-->
+    <a href="{% url 'criaturas_por_raza' criatura.raza.id %}">Ver más criaturas de esta raza</a>
     <br>
     <a href="{% url 'razas' %}">Volver a razas</a>
-</div> 
+</div>
+
+<!-- Cuadros de diálogo -->
+<div id="dialog" title="Información sobre la raza" style="display: none;">
+    <p id="medio_header"><strong>¿SEGURO QUE QUIERES VISITAR ESTA RAZA?</p>
+    <p id="texto_dialogo">Las criaturas de esta raza ({{criatura.raza.nombre}}) tienen la siguinete descripción: {{ criatura.raza.descripcion }}</p>
+</div>
+
+<div id="category-dialog" title="Información sobre la categoría" style="display: none;">
+    <p id="category-header"><strong>¿SEGURO QUE QUIERES VISITAR ESTA CATEGORÍA?</strong></p>
+    <p id="category-description">Estás a punto de visitar la categoría: <span id="category-name"></span>.</p>
+</div>
+{% endblock %}
+
+{% block extras %}
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<script src="{% static 'js/dialogos.js' %}"></script>
 {% endblock %}
