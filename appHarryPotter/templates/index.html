@@ -408,17 +408,18 @@ Bootstrap 5 HTML CSS Template
             </main>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
-        <script src="js/vegas.min.js"></script>
+        <script src="js/vegas.min.js"></script> -->
         <!-- <script src="js/custom.js"></script> -->
-         <a href="/es/">Español</a> | <a href="/en-us/">English</a>
+        <!-- <a href="/es/">Español</a> | <a href="/en-us/">English</a> -->
+        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>
         
 
         <!-- Nuestros scrips JAVASCRIPT-->
-         <script src="{% static 'js/script_jquery.js' %}"></script>
+        <script src="{% static 'js/script_jquery.js' %}"></script>
         <script src="{% static 'js/rotar_razas.js' %}"></script>
     </body>
 </html>

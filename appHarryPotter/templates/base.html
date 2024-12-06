@@ -185,13 +185,14 @@ Bootstrap 5 HTML CSS Template
 
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/vegas.min.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="js/custom.js"></script> -->
 
-        <a href="/es/">Español</a> | <a href="/en-us/">English</a>
+        <!-- <a href="/es/">Español</a> | <a href="/en-us/">English</a> -->
+        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>
 
         <script src="{% static 'js/script_jquery.js' %}"></script>
         {% block extras %} {% endblock %}

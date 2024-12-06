@@ -24,6 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
 ]
 
-urlpatterns += i18n_patterns(
-    path('', include('appHarryPotter.urls')),
-)
+# urlpatterns += i18n_patterns(
+#     path('', include('appHarryPotter.urls')),
+# )

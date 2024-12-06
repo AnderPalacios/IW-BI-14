@@ -143,3 +143,15 @@ class CriaturaDetailView(DetailView):
     model = Criatura
     template_name = 'criatura.html'
 
+from django.utils.translation import activate
+from django.shortcuts import redirect
+from django.conf import settings
+
+def set_language(request, lang_code):
+    # Cambiar el idioma
+    if lang_code in dict(settings.LANGUAGES):
+        activate(lang_code)
+        response = redirect(request.META.get('HTTP_REFERER', '/'))  # Redirigir a la página anterior
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)  # Guarda el idioma en cookies
+        return response
+    return redirect('/')

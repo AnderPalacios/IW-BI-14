@@ -102,13 +102,19 @@ LANGUAGE_CODE = "es"
 TIME_ZONE = "UTC"
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
+LANGUAGE_COOKIE_NAME = 'django_language'  # Nombre de la cookie de idioma
+LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30 
 # Lista de idiomas soportados
+# LANGUAGES = [
+#     ("es", gettext_lazy("Español")),
+#     ("en-us", gettext_lazy("English")),
+# ]
 LANGUAGES = [
-    ("es", gettext_lazy("Español")),
-    ("en-us", gettext_lazy("English")),
+    ('es', 'Español'),
+    ('en', 'English'),
 ]
 
 # En esta carpeta se almacenan los archivos de traduccion
@@ -119,12 +125,13 @@ LOCALE_PATHS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware", # para la traducción
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "django.middleware.locale.LocaleMiddleware", # traducciones dinamicas
+    # "django.middleware.locale.LocaleMiddleware", # traducciones dinamicas
 ]
 
 
