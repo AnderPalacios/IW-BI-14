@@ -91,40 +91,93 @@ $(document).ready(function () {
 
 
 
+// ------------------------------------------------
+// ROTACIÓN DE RAZAS
+// Otro .js aparte
+// ------------------------------------------------
 
-    // Rotación de las razas
-    // En otro .js aparte
 
 
-
-
+// ------------------------------------------------
     // MOVER LOS ELEMENTOS DE DESCRIPCIONES DE ENTIDADES
-    // function moverElementos() {
-    //     // Obtener las posiciones actuales de cada contenedor de la timeline
-    //     var firstOffset = $('.timeline-container-left').eq(0).offset();
-    //     var secondOffset = $('.timeline-container-right').eq(0).offset();
-    //     var thirdOffset = $('.timeline-container-left').eq(1).offset();
+let rotationCount = 0;
 
-    //     // Mover el primer div al segundo
-    //     $('.timeline-container-left').eq(0).animate({
-    //         top: secondOffset.top - firstOffset.top,
-    //         left: secondOffset.left - firstOffset.left
-    //     }, 1000);
+function moverElementos() {
+    // Como solo rotamos el primero y el tercero, cogemos sus coordenadas.
+    // Para el segundo simplemento cogemos el elemento y le aplicamos un efecto diferente
+    var firstOffset = $('.timeline-container-left').eq(0).offset();
+    var secondElement = $('.timeline-container-right').eq(0);
+    var thirdOffset = $('.timeline-container-left').eq(1).offset();
 
-    //     // Mover el segundo div al tercero
-    //     $('.timeline-container-right').eq(0).animate({
-    //         top: thirdOffset.top - secondOffset.top,
-    //         left: thirdOffset.left - secondOffset.left
-    //     }, 1000);
+    if (rotationCount == 0) { //Esta funcionalidad solo con la primera llamada a la función
+        // Mover el primer div al segundo
+        $('.timeline-container-left').eq(0).animate({
+            top: thirdOffset.top - firstOffset.top,
+            left: thirdOffset.left - firstOffset.left
+        }, 2500); // Animación durante 2.5s
 
-    //     // Mover el tercer div al primero
-    //     $('.timeline-container-left').eq(1).animate({
-    //         top: firstOffset.top - thirdOffset.top,
-    //         left: firstOffset.left - thirdOffset.left
-    //     }, 1000);
-    // }
+        // Mover el tercer div al primero
+        $('.timeline-container-left').eq(1).animate({
+            top: firstOffset.top - thirdOffset.top,
+            left: firstOffset.left - thirdOffset.left
+        }, 2500);
 
-    // // Llamamos a la función para mover los elementos al cargarse la página
-    // moverElementos();
+        // Efectos para el segundo div (a la derecha)
+        secondElement.css({
+            transition: "transform 1.5s ease, opacity 1.5s ease",
+            transform: "rotateY(360deg) scale(1.2)", 
+            opacity: 0.5 
+        });
 
+        setTimeout(function () {
+            secondElement.css({
+                transform: "rotateY(0deg) scale(1)",
+                opacity: 1 // Restaurar opacidad
+            });
+        }, 1500);
+    }
+    // Para el resto de ejecuciones
+    else {
+        // Mismo efecto para todos
+        $('.timeline-container-left').eq(0).css({
+            transition: "transform 1.5s ease, opacity 1.5s ease",
+            transform: "rotateY(360deg) scale(1.2)",
+            opacity: 0.5
+        });
+
+        $('.timeline-container-left').eq(1).css({
+            transition: "transform 1.5s ease, opacity 1.5s ease",
+            transform: "rotateY(360deg) scale(1.2)",
+            opacity: 0.5
+        });
+
+        secondElement.css({
+            transition: "transform 1.5s ease, opacity 1.5s ease",
+            transform: "rotateY(360deg) scale(1.2)", 
+            opacity: 0.5 
+        });
+
+        setTimeout(function () {
+            $('.timeline-container-left').eq(0).css({
+                transform: "rotateY(0deg) scale(1)",
+                opacity: 1
+            });
+
+            $('.timeline-container-left').eq(1).css({
+                transform: "rotateY(0deg) scale(1)",
+                opacity: 1
+            });
+            secondElement.css({
+                transform: "rotateY(0deg) scale(1)",
+                opacity: 1 // Restaurar opacidad
+            });
+        }, 1500);
+    }
+
+    rotationCount++;
+}
+
+moverElementos();
+setInterval(moverElementos, 7000);
+// ------------------------------------------------
 });

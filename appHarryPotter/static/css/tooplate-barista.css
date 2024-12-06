@@ -327,7 +327,10 @@ strong {
   font-weight: var(--font-weight-bold);
   line-height: normal;
   transition: all 0.3s;
-  padding: 12px 28px;
+  padding: 12px 15px;
+  width: auto;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .custom-btn2:hover {
@@ -376,7 +379,6 @@ strong {
 
 .navbar {
   background-color: rgb(26, 25, 25);
-  /* background: transparent; */
   z-index: 999999;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -411,12 +413,15 @@ strong {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
+  width: auto;  
+  white-space: nowrap; 
   border-radius: var(--border-radius-large);
   margin: 10px;
   padding: 10px;
   /* background-color: #717275; */
   /* border: white; */
   border: 2px solid white;
+  display: inline-block;
 }
 
 .navbar-nav .nav-link {
@@ -1326,7 +1331,6 @@ strong {
   .navbar-brand,
   .navbar-brand:hover {
     font-size: var(--h5-font-size);
-    background-color: red;
   }
 
   .navbar-expand-lg .navbar-nav {
