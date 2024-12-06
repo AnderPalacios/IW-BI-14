@@ -2,59 +2,115 @@ from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import CategoriaPeligro, Raza, Criatura
 from .forms import CriaturaForm
-
+from django.views.generic import DetailView, ListView, TemplateView
 from django.http import HttpResponse
+
 # Create your views here.
-def index(request):
-    # Aquí pasarle al index.html las razas y que pille una de ellas
-    criaturas_filtradas1 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (1, 2, 6) ORDER BY id DESC) GROUP BY raza_id ')
-    criaturas_filtradas2 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (4, 5, 7) ORDER BY id ASC) GROUP BY raza_id ')
-    # Fénix entre las aves mágicas
-    criaturas_filtradas3 = Criatura.objects.raw('SELECT * FROM appHarryPotter_Criatura WHERE raza_id = 3 AND nombre = "Fénix"')
-    criaturas_filtradas = list(criaturas_filtradas1) + list(criaturas_filtradas2) + list(criaturas_filtradas3)
-    criaturas_filtradas = sorted(criaturas_filtradas, key=lambda criatura: criatura.raza.id)
-    return render(request, 'index.html', {'lista_criaturas': criaturas_filtradas})
+# def index(request):
+#     # Aquí pasarle al index.html las razas y que pille una de ellas
+#     criaturas_filtradas1 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (1, 2, 6) ORDER BY id DESC) GROUP BY raza_id ')
+#     criaturas_filtradas2 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (4, 5, 7) ORDER BY id ASC) GROUP BY raza_id ')
+#     # Fénix entre las aves mágicas
+#     criaturas_filtradas3 = Criatura.objects.raw('SELECT * FROM appHarryPotter_Criatura WHERE raza_id = 3 AND nombre = "Fénix"')
+#     criaturas_filtradas = list(criaturas_filtradas1) + list(criaturas_filtradas2) + list(criaturas_filtradas3)
+#     criaturas_filtradas = sorted(criaturas_filtradas, key=lambda criatura: criatura.raza.id)
+#     return render(request, 'index.html', {'lista_criaturas': criaturas_filtradas})
+class IndexView(TemplateView): # TemplateView porque hacemos consultas específicas. No trabajamos especificamente con un modelo
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        # Consultas raw
+        criaturas_filtradas1 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (1, 2, 6) ORDER BY id DESC) GROUP BY raza_id ')
+        criaturas_filtradas2 = Criatura.objects.raw('SELECT * FROM( SELECT * FROM appHarryPotter_Criatura WHERE raza_id IN (4, 5, 7) ORDER BY id ASC) GROUP BY raza_id ')
+        criaturas_filtradas3 = Criatura.objects.raw('SELECT * FROM appHarryPotter_Criatura WHERE raza_id = 3 AND nombre = "Fénix"')
+
+        criaturas_filtradas = list(criaturas_filtradas1) + list(criaturas_filtradas2) + list(criaturas_filtradas3)
+        criaturas_filtradas = sorted(criaturas_filtradas, key=lambda criatura: criatura.raza.id)
+        
+        context['lista_criaturas'] = criaturas_filtradas
+        return context
 
 
-def show_categorias(request):
-    categorias = get_list_or_404(CategoriaPeligro.objects.all())
-    return render(request, 'categorias.html', {'lista_categorias': categorias})
+# def show_categorias(request):
+#     categorias = get_list_or_404(CategoriaPeligro.objects.all())
+#     return render(request, 'categorias.html', {'lista_categorias': categorias})
+class CategoriasListView(ListView):
+    model = CategoriaPeligro
+    template_name = 'categorias.html'
+    queryset = CategoriaPeligro.objects.all()
+    context_object_name = 'lista_categorias'
 
-def criaturas_por_categoria(request, categoria_id):
-    # Recuperar la categoría de peligro específica
-    categoria = get_object_or_404(CategoriaPeligro, id=categoria_id)
-    # Recuperar las criaturas asociadas a esta categoría
-    criaturas = get_list_or_404(Criatura.objects.filter(categorias_peligro=categoria))
+# def criaturas_por_categoria(request, categoria_id):
+#     # Recuperar la categoría de peligro específica
+#     categoria = get_object_or_404(CategoriaPeligro, id=categoria_id)
+#     # Recuperar las criaturas asociadas a esta categoría
+#     criaturas = get_list_or_404(Criatura.objects.filter(categorias_peligro=categoria))
 
-    # Renderizar una plantilla con la información
-    return render(request, 'criaturas_por_categoria.html', {
-        'categoria': categoria,
-        'criaturas': criaturas
-    })
+#     # Renderizar una plantilla con la información
+#     return render(request, 'criaturas_por_categoria.html', {
+#         'categoria': categoria,
+#         'criaturas': criaturas
+#     })
+class CriaturasPorCategoriaView(DetailView):
+    model = CategoriaPeligro
+    template_name = 'criaturas_por_categoria.html'
+    context_object_name = 'categoria'
 
-def show_razas(request):
-    razas = get_list_or_404(Raza.objects.all())
-    return render(request, 'razas.html', {'lista_razas': razas})
+    def get_context_data(self, **kwargs):
+        # Voy a añadir al contexto (dict) una variable más
+        context = super(CriaturasPorCategoriaView, self).get_context_data(**kwargs)
+        context['criaturas'] = get_list_or_404(Criatura.objects.filter(categorias_peligro=self.object))
+        return context
 
-def criaturas_por_raza(request, raza_id):
-    # Recuperar la raza específica
-    raza = get_object_or_404(Raza, id=raza_id)
+
+# def show_razas(request):
+#     razas = get_list_or_404(Raza.objects.all())
+#     return render(request, 'razas.html', {'lista_razas': razas})
+class RazasListView(ListView):
+    model = Raza
+    template_name = 'razas.html'
+    queryset = Raza.objects.all()
+    context_object_name = 'lista_razas'
+
+
+
+# def criaturas_por_raza(request, raza_id):
+#     # Recuperar la raza específica
+#     raza = get_object_or_404(Raza, id=raza_id)
     
-    # Recuperar las criaturas asociadas a esta raza
-    criaturas = get_list_or_404(Criatura.objects.filter(raza=raza))
+#     # Recuperar las criaturas asociadas a esta raza
+#     criaturas = get_list_or_404(Criatura.objects.filter(raza=raza))
     
-    # Renderizar una plantilla con la información
-    return render(request, 'criaturas_por_raza.html', {
-        'raza': raza,
-        'criaturas': criaturas
-    })
+#     # Renderizar una plantilla con la información
+#     return render(request, 'criaturas_por_raza.html', {
+#         'raza': raza,
+#         'criaturas': criaturas
+#     })
+class CriaturasPorRazaView(DetailView):
+    model = Raza
+    template_name = 'criaturas_por_raza.html'
+    context_object_name = 'raza'  # La raza será accesible como 'raza' en el template
+
+    def get_context_data(self, **kwargs):
+        context = super(CriaturasPorRazaView, self).get_context_data(**kwargs)
+        context['criaturas'] = get_list_or_404(Criatura.objects.filter(raza=self.object))
+        return context
 
 
-def show_criaturas(request):
-    criaturas = get_list_or_404(Criatura.objects.all())
-    categorias = get_list_or_404(CategoriaPeligro.objects.all())
-    context = {'lista_criaturas': criaturas, 'lista_categorias': categorias}
-    return render(request, 'criaturas.html', context)
+
+# def show_criaturas(request):
+#     criaturas = get_list_or_404(Criatura.objects.all())
+#     context = {'lista_criaturas': criaturas, 'lista_categorias': categorias}
+#     return render(request, 'criaturas.html', context)
+class CriaturasListView(ListView):
+    model = Criatura
+    template_name = 'criaturas.html'
+    queryset = Criatura.objects.all()
+    context_object_name = 'lista_criaturas'
+
+
+
 
 def formularios(request):
     if request.method == 'POST':
@@ -80,7 +136,10 @@ def formularios(request):
 
 
 
-def ver_criatura(request, criatura_id):
-    criatura = get_object_or_404(Criatura, pk=criatura_id)
-    return render(request, 'criatura.html', {'criatura': criatura})
+# def ver_criatura(request, criatura_id):
+#     criatura = get_object_or_404(Criatura, pk=criatura_id)
+#     return render(request, 'criatura.html', {'criatura': criatura})
+class CriaturaDetailView(DetailView):
+    model = Criatura
+    template_name = 'criatura.html'
 

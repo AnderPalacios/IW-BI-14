@@ -3,12 +3,12 @@ from . import views
 
 # Definimos las rutas para que soporten las traducciones
 urlpatterns = [
- path('', views.index, name='index'),
- path('appHarryPotter/categorias', views.show_categorias, name="categorias"),
- path('appHarryPotter/categorias/<int:categoria_id>/criaturas/', views.criaturas_por_categoria, name='criaturas_por_categoria'),
- path('appHarryPotter/razas', views.show_razas, name="razas"),
- path('appHarryPotter/razas/<int:raza_id>/criaturas/', views.criaturas_por_raza, name='criaturas_por_raza'),
- path('appHarryPotter/criaturas', views.show_criaturas, name="criaturas"),
- path('appHarryPotter/criatura/<int:criatura_id>/', views.ver_criatura, name='criatura'),
+ path('', views.IndexView.as_view(), name='index'),
+ path('appHarryPotter/categorias', views.CategoriasListView.as_view(), name="categorias"),
+ path('appHarryPotter/categorias/<int:pk>/criaturas/', views.CriaturasPorCategoriaView.as_view(), name='criaturas_por_categoria'),
+ path('appHarryPotter/razas', views.RazasListView.as_view(), name="razas"),
+ path('appHarryPotter/razas/<int:pk>/criaturas/', views.CriaturasPorRazaView.as_view(), name='criaturas_por_raza'),
+ path('appHarryPotter/criaturas', views.CriaturasListView.as_view(), name="criaturas"),
+ path('appHarryPotter/criatura/<int:pk>/', views.CriaturaDetailView.as_view(), name='criatura'),
  path('appHarryPotter/formulario/', views.formularios, name='formulario')
 ]
