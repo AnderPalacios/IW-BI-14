@@ -4,11 +4,13 @@ from django.db.models import Value
 from django.db.models.functions import Concat
 from .models import CategoriaPeligro, Raza, Criatura
 
-# ---------------------------------------------------
-# Configuración de CategoriaPeligro
-# ---------------------------------------------------
+
 class CategoriaPeligroAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'nivel_peligro_colored', 'descripcion')
+    search_fields = ('nombre',)
+    list_display_links = ('nombre', )
+    list_filter = ('nivel_peligro', )
+    list_per_page = 5
 
     @admin.display(description="Nivel de Peligro")
     def nivel_peligro_colored(self, obj):
@@ -40,12 +42,13 @@ class CategoriaPeligroAdmin(admin.ModelAdmin):
             fields.remove('nivel_peligro')
         return fields
 
-
-# ---------------------------------------------------
-# Configuración de Raza
-# ---------------------------------------------------
 class RazaAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'inteligencia', 'descripcion')
+    list_display = ('nombre', 'inteligencia', 'habitat', 'descripcion')
+    search_fields = ('nombre', 'inteligencia')
+    list_editable = ('inteligencia', )
+    list_display_links = ('nombre', )
+    list_filter = ('inteligencia', )
+    list_per_page = 10
 
     @admin.display(description="Inteligencia (Estrellas)")
     def inteligencia_estrellas(self, obj):
@@ -64,11 +67,11 @@ class RazaAdmin(admin.ModelAdmin):
         return fields
 
 
-# ---------------------------------------------------
-# Configuración de Criatura
-# ---------------------------------------------------
 class CriaturaAdmin(admin.ModelAdmin):
-    list_display = ('nombre_completo', 'raza', 'categorias_peligro_list')
+    list_display = ('nombre_completo', 'descripcion', 'tamano', 'raza', 'categorias_peligro_list')
+    list_display_links = ('nombre_completo', )
+    list_filter = ('categorias_peligro', )
+    list_per_page = 3
 
     @admin.display(ordering=Concat('nombre', Value(' - '), 'tamano'))
     def nombre_completo(self, obj):
@@ -93,9 +96,6 @@ class CriaturaAdmin(admin.ModelAdmin):
         return True
 
 
-# ---------------------------------------------------
-# Registro de los modelos en el admin
-# ---------------------------------------------------
 admin.site.register(CategoriaPeligro, CategoriaPeligroAdmin)
 admin.site.register(Raza, RazaAdmin)
 admin.site.register(Criatura, CriaturaAdmin)
