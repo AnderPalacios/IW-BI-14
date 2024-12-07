@@ -115,6 +115,7 @@ LANGUAGE_COOKIE_AGE = 60 * 60 * 24 * 30
 LANGUAGES = [
     ('es', 'Español'),
     ('en', 'English'),
+    ('eus', 'Euskera')
 ]
 
 # En esta carpeta se almacenan los archivos de traduccion
