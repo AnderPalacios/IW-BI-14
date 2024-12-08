@@ -1,0 +1,39 @@
+[
+    {
+      "model": "appHarryPotter.CategoriaPeligro",
+      "pk": 1,
+      "fields": {
+        "nombre": "Inofensivo",
+        "nivel_peligro": 1,
+        "descripcion": "Estas criaturas representan un nivel mínimo de amenaza tanto para los magos como para las personas comunes. Su interacción con humanos suele ser pacífica, y en muchos casos, son útiles y benéficas. Los magos principiantes suelen entrenar su manejo de criaturas mágicas con seres de esta categoría."
+      }
+    },
+    {
+      "model": "appHarryPotter.CategoriaPeligro",
+      "pk": 2,
+      "fields": {
+        "nombre": "Precaución",
+        "nivel_peligro": 2,
+        "descripcion": "Criaturas que, aunque no buscan el conflicto, pueden volverse peligrosas en determinadas circunstancias. Requieren respeto y conocimiento por parte de quienes se acerquen a ellas, ya que su comportamiento puede variar según su entorno o estado emocional."
+      }
+    },
+    {
+      "model": "appHarryPotter.CategoriaPeligro",
+      "pk": 3,
+      "fields": {
+        "nombre": "Peligroso",
+        "nivel_peligro": 3,
+        "descripcion": "Estas criaturas representan un riesgo significativo debido a su naturaleza agresiva, territorial o impredecible. Manejar seres de esta categoría requiere experiencia avanzada y, en muchos casos, la ayuda de múltiples magos. Sus habilidades mágicas suelen ser destructivas o altamente defensivas."
+      }
+    },
+    {
+      "model": "appHarryPotter.CategoriaPeligro",
+      "pk": 4,
+      "fields": {
+        "nombre": "Letal",
+        "nivel_peligro": 4,
+        "descripcion": "Estas criaturas son extremadamente peligrosas y representan una amenaza mortal para cualquier persona que se cruce en su camino. Su poder mágico y físico es devastador, solo los magos más valientes o insensatos se aventuran a enfrentarlas."
+      }
+    }
+  ]
+  
