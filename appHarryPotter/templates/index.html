@@ -81,7 +81,7 @@ Bootstrap 5 HTML CSS Template
                                     {%trans "Razas" %}
                                 </a>
                                 <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'formulario' %}">
-                                    Añadir criatura
+                                    {% trans "Añadir criatura" %}
                                 </a>
                                 <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'nueva_raza' %}">
                                     Añadir raza
@@ -418,7 +418,7 @@ Bootstrap 5 HTML CSS Template
         <script src="js/vegas.min.js"></script> -->
         <!-- <script src="js/custom.js"></script> -->
         <!-- <a href="/es/">Español</a> | <a href="/en-us/">English</a> -->
-        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>
+        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>| <a href="{% url 'set_language' 'eus' %}">Euskera</a>
         
 
         <!-- Nuestros scrips JAVASCRIPT-->

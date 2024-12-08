@@ -1,0 +1,257 @@
+[
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 1,
+    "fields": {
+      "nombre": "Acromántula",
+      "descripcion": "Las Acromántulas son arañas gigantes extremadamente inteligentes y peligrosas, capaces de comunicarse con los magos. Originarias de la selva de Borneo, son conocidas por su agresividad y su veneno mortal. Estas criaturas tejen telas gigantescas y tienen un comportamiento territorial.",
+      "tamano": "Entre 4 y 6 metros de ancho.",
+      "raza_id": 1,
+      "categorias_peligro":[3,4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 2,
+    "fields": {
+      "nombre": "Augurey",
+      "descripcion": "También conocido como el \"Ave de la Lluvia\", el Augurey es un pájaro mágico de color verde oscuro o negro que canta antes de una tormenta. Aunque su canto fue asociado con la muerte, se sabe que solo predice lluvias inminentes. Es tímido, inofensivo y suele habitar en zonas húmedas y bosques densos.",
+      "tamano": "Similar al de un pequeño halcón.",
+      "raza_id": 3,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 3,
+    "fields": {
+      "nombre": "Basilisco",
+      "descripcion": "Conocido como el \"Rey de las Serpientes\", el Basilisco es una serpiente gigante legendaria que puede matar a sus víctimas con una sola mirada. Su veneno es tan potente que puede destruir objetos mágicos. Criado por magia oscura, es una criatura que inspira terror absoluto.",
+      "tamano": "Hasta 15 metros de largo.",
+      "raza_id": 1,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 4,
+    "fields": {
+      "nombre": "Centauro",
+      "descripcion": "Los centauros son seres mitad humano, mitad caballo, conocidos por su sabiduría y conocimiento en astronomía y adivinación. Aunque suelen evitar a los humanos, son extremadamente orgullosos y peligrosos si se sienten amenazados o irrespetados. Habitan en bosques densos y tienen una cultura compleja.",
+      "tamano": "Alrededor de 2,5 metros de altura.",
+      "raza_id": 7,
+      "categorias_peligro":[2,3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 5,
+    "fields": {
+      "nombre": "Colacuerno Húngaro",
+      "descripcion": "Uno de los dragones más agresivos, el Colacuerno Húngaro es famoso por sus escamas negras y su cola con púas afiladas. Es extremadamente territorial y puede lanzar fuego a grandes distancias. Solo los magos más experimentados se atreven a enfrentarlo.",
+      "tamano": "Entre 10 y 15 metros de largo.",
+      "raza_id": 4,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 6,
+    "fields": {
+      "nombre": "Cancerbero",
+      "descripcion": "Este perro mágico de tres cabezas es un guardián formidable que aparece en varias mitologías. Feroz y altamente protector, el Cancerbero es leal a quien lo controla, pero extremadamente peligroso para cualquier intruso. Su rugido puede ser ensordecedor.",
+      "tamano": "Hasta 4 metros de altura.",
+      "raza_id": 1,
+      "categorias_peligro":[3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 7,
+    "fields": {
+      "nombre": "Dementor",
+      "descripcion": "Los Dementores son entidades oscuras que absorben la felicidad y los recuerdos positivos de quienes los rodean. Sus víctimas suelen caer en la desesperación absoluta, y aquellos que reciben su \"beso\" pierden el alma para siempre. Habitan en zonas frías y oscuras.",
+      "tamano": "Aproximadamente 3 metros de altura, flotan sobre el suelo.",
+      "raza_id": 5,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 8,
+    "fields": {
+      "nombre": "Diricawl",
+      "descripcion": "Un ave mágica que puede desaparecer al instante para escapar de depredadores. El Diricawl, también es un recordatorio de cómo las criaturas mágicas a menudo se esconden en la naturaleza sin ser detectadas.",
+      "tamano": "Similar a un pavo grande.",
+      "raza_id": 3,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 9,
+    "fields": {
+      "nombre": "Fénix",
+      "descripcion": "Una criatura majestuosa e inmortal, el Fénix es conocido por renacer de sus cenizas tras morir. Sus lágrimas tienen propiedades curativas, y su canto inspira esperanza. Es leal solo a quienes demuestren pureza de corazón.",
+      "tamano": "Aproximadamente el de un águila grande.",
+      "raza_id": 3,
+      "categorias_peligro":[1,2]
+    }
+  },  
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 10,
+    "fields": {
+      "nombre": "Elfo doméstico",
+      "descripcion": "Criaturas mágicas pequeñas y leales que sirven a los magos. Aunque suelen ser serviciales y humildes, los elfos domésticos tienen un poder mágico innato impresionante que pueden utilizar en circunstancias extremas.",
+      "tamano": "Entre 60 y 90 cm de altura.",
+      "raza_id": 2,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 11,
+    "fields": {
+      "nombre": "Grindylow",
+      "descripcion": "Criaturas acuáticas agresivas que habitan en lagos y pantanos mágicos. Los Grindylows son pequeños pero letales, con largos dedos que utilizan para atrapar a sus víctimas. Se vuelven especialmente peligrosos en aguas oscuras o poco profundas.",
+      "tamano": "1 metro de largo.",
+      "raza_id": 6,
+      "categorias_peligro":[2,3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 12,
+    "fields": {
+      "nombre": "Hipogrifo",
+      "descripcion": "Criaturas orgullosas y majestuosas con cuerpo de caballo y cabeza de águila. Los Hipogrifos son extremadamente nobles y esperan respeto absoluto de quienes los tratan. Si se les provoca, pueden ser peligrosos, pero también son leales compañeros si se ganan su confianza.",
+      "tamano": "Entre 3 y 4 metros de largo.",
+      "raza_id": 7,
+      "categorias_peligro":[2,3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 13,
+    "fields": {
+      "nombre": "Hébrido Negro",
+      "descripcion": "Este dragón es una variante del Colacuerno Húngaro, conocido por su piel negra como el carbón y su cola afilada que utiliza como arma. Extremadamente territorial, ataca sin provocación a cualquiera que se acerque.",
+      "tamano": "Hasta 15 metros de largo.",
+      "raza_id": 4,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 14,
+    "fields": {
+      "nombre": "Inferius",
+      "descripcion": "Los Inferi son cadáveres reanimados mediante magia oscura. Carecen de voluntad propia y obedecen ciegamente a su creador. Usados como soldados en batallas, son difíciles de detener debido a su resistencia física.",
+      "tamano": "Similar al de un humano promedio.",
+      "raza_id": 5,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 15,
+    "fields": {
+      "nombre": "Lethifold",
+      "descripcion": "Una criatura oscura que se desliza como una capa negra sobre el suelo. El Lethifold ataca a sus víctimas envolviéndolas y sofocándolas. Solo se le puede repeler con un encantamiento patronus.",
+      "tamano": "Alrededor de 3 metros de largo.",
+      "raza_id": 5,
+      "categorias_peligro":[4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 16,
+    "fields": {
+      "nombre": "Lechuza",
+      "descripcion": "Utilizadas principalmente como mensajeras en el mundo mágico, las lechuzas son aves nocturnas inteligentes y leales. Aunque no son peligrosas, su agudeza visual y su velocidad las convierten en compañeras valiosas.",
+      "tamano": "50 cm de altura.",
+      "raza_id": 3,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 17,
+    "fields": {
+      "nombre": "Nagini",
+      "descripcion": "Una serpiente gigante que sirvió como aliada y horrocrux de Lord Voldemort. Nagini es extremadamente peligrosa debido a su veneno mortal y su lealtad absoluta a la magia oscura.",
+      "tamano": "Hasta 5 metros de largo.",
+      "raza_id": 1,
+      "categorias_peligro":[3,4]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 18,
+    "fields": {
+      "nombre": "Sirena",
+      "descripcion": "Habitantes de las profundidades mágicas, las sirenas son seres semi-inteligentes con una cultura propia. Aunque pueden ser amables, suelen atacar si sienten que su territorio está en peligro.",
+      "tamano": "Entre 1,5 y 2 metros de largo.",
+      "raza_id": 6,
+      "categorias_peligro":[2,3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 19,
+    "fields": {
+      "nombre": "Snidget Dorado",
+      "descripcion": "Un pequeño pájaro mágico de gran agilidad que fue usado antiguamente en el Quidditch. Su captura está prohibida debido a su estatus protegido, pero sigue siendo muy admirado por los magos.",
+      "tamano": "Del tamaño de un puño cerrado.",
+      "raza_id": 3,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 20,
+    "fields": {
+      "nombre": "Thestral",
+      "descripcion": "Caballos alados con un aspecto esquelético, visibles solo para aquellos que han presenciado la muerte. A pesar de su apariencia aterradora, los Thestrals son dóciles y muy inteligentes.",
+      "tamano": "Alrededor de 2 metros de altura.",
+      "raza_id": 7,
+      "categorias_peligro":[1,2]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 21,
+    "fields": {
+      "nombre": "Troll",
+      "descripcion": "Criaturas gigantescas, torpes pero extremadamente fuertes. Los trolls tienen una inteligencia limitada y tienden a ser agresivos, lo que los hace muy peligrosos para quienes los encuentren.",
+      "tamano": "Hasta 4 metros de altura.",
+      "raza_id": 1,
+      "categorias_peligro":[3]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 22,
+    "fields": {
+      "nombre": "Unicornio",
+      "descripcion": "Seres mágicos de belleza incomparable. Los unicornios son símbolos de pureza y vida, pero su sangre está maldita, otorgando vida al precio de la corrupción del alma.",
+      "tamano": "Similar al de un caballo promedio.",
+      "raza_id": 2,
+      "categorias_peligro":[1]
+    }
+  },
+  {
+    "model": "appHarryPotter.criatura",
+    "pk": 23,
+    "fields": {
+      "nombre": "Hombre lobo",
+      "descripcion": "Los hombres lobo son humanos que se transforman durante la luna llena en bestias salvajes. Durante su transformación, pierden toda humanidad y se vuelven extremadamente peligrosos.",
+      "tamano": "Ligeramente más grandes que un lobo normal.",
+      "raza_id": 2,
+      "categorias_peligro":[1]
+    }
+  }
+]
+
+  
