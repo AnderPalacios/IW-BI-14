@@ -1,0 +1,73 @@
+[
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 1,
+      "fields": {
+        "nombre": "Criatura Gigante",
+        "descripcion": "Seres de tamaño colosal que dominan el entorno por su inmensa fuerza y presencia. A menudo son solitarios y territoriales, defendiendo ferozmente sus dominios contra intrusos. Aunque su comportamiento es básico, su tamaño las hace temidas y respetadas tanto por magos como por criaturas mágicas.",
+        "habitat": "Montañas, bosques densos o llanuras abiertas donde pueden moverse libremente.",
+        "inteligencia": 3
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 2,
+      "fields": {
+        "nombre": "Criatura mágica",
+        "descripcion": "Seres con una conexión intrínseca con la magia, capaces de realizar actos sobrenaturales sin la necesidad de varitas o hechizos. Su aspecto y habilidades varían enormemente, pero todas comparten una esencia mágica que las distingue de cualquier criatura común.",
+        "habitat": "Lugares mágicos como bosques encantados, cuevas místicas o áreas protegidas por magia.",
+        "inteligencia": 6
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 3,
+      "fields": {
+        "nombre": "Ave Mágica",
+        "descripcion": "Estas aves se destacan no solo por su apariencia majestuosa y a menudo sobrenatural, sino también por sus capacidades mágicas únicas. Su lealtad y conexión con magos selectos las hacen especialmente valoradas en la comunidad mágica.",
+        "habitat": "Bosques encantados, picos montañosos y a menudo en proximidad con magos y hechiceros.",
+        "inteligencia": 5
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 4,
+      "fields": {
+        "nombre": "Dragón",
+        "descripcion": "Criaturas legendarias de enorme poder y ferocidad, conocidas por su piel escamosa impenetrable, enormes alas y aliento mortal. Los dragones son extremadamente territoriales y suelen acumular tesoros, lo que los convierte en objetivos para los cazadores más osados.",
+        "habitat": "Montañas remotas, cavernas protegidas o zonas volcánicas.",
+        "inteligencia": 7
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 5,
+      "fields": {
+        "nombre": "Ser Oscuro",
+        "descripcion": "Criaturas asociadas a las artes oscuras, a menudo creadas o influenciadas por magia negra. Aunque suelen ser usadas por magos oscuros, hay excepciones donde estas criaturas actúan de manera independiente, buscando caos o simplemente siguiendo sus instintos destructivos.",
+        "habitat": "Lugares oscuros y aislados como pantanos, criptas, bosques oscuros o ruinas antiguas.",
+        "inteligencia": 4
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 6,
+      "fields": {
+        "nombre": "Criatura Acuática",
+        "descripcion": "Seres que han evolucionado para prosperar en entornos acuáticos. Estas criaturas pueden ser pacíficas, como aquellas que guían a marineros perdidos, o temibles depredadores que acechan en las profundidades. A menudo son objeto de leyendas, algunos creen que esconden secretos antiguos de los océanos.",
+        "habitat": "Lagos mágicos, océanos profundos o ríos encantados.",
+        "inteligencia": 5
+      }
+    },
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 7,
+      "fields": {
+        "nombre": "Híbrida",
+        "descripcion": "Criaturas que combinan características físicas y habilidades de diferentes especies. Su dualidad les permite desenvolverse en múltiples entornos, destacándose por su adaptabilidad y versatilidad. Estas criaturas son consideradas excepcionales debido a la singularidad de su naturaleza.",
+        "habitat": "Lugares diversos, desde montañas hasta bosques mágicos y áreas controladas por magos.",
+        "inteligencia": 8
+      }
+    }
+  ]
+  

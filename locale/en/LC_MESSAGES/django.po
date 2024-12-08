@@ -93,3 +93,6 @@ msgstr "Sunday"
 
 msgid "Cerrado"
 msgstr "Closed"
+
+msgid "Añadir criatura"
+msgstr "Add creature"

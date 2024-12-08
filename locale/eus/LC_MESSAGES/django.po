@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-07 17:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\appHarryPotter\templates\base.html:12
+#: .\appHarryPotter\templates\index.html:12
+#: .\appHarryPotter\templates\index.html:110
+msgid "Bestiario de Harry Potter"
+msgstr "Harry Potterren Bestiarioa"
+
+#: .\appHarryPotter\templates\base.html:51
+#: .\appHarryPotter\templates\index.html:50
+msgid "Bestiario"
+msgstr "Bestiarioa"
+
+#: .\appHarryPotter\templates\base.html:61
+#: .\appHarryPotter\templates\index.html:60
+msgid "Inicio"
+msgstr "Hasiera"
+
+#: .\appHarryPotter\templates\base.html:68
+#: .\appHarryPotter\templates\index.html:75
+#: .\appHarryPotter\templates\index.html:265
+msgid "Criaturas"
+msgstr "Izakiak"
+
+#: .\appHarryPotter\templates\base.html:71
+#: .\appHarryPotter\templates\index.html:78
+#: .\appHarryPotter\templates\index.html:316
+msgid "Categorías"
+msgstr "Kategoriak"
+
+#: .\appHarryPotter\templates\base.html:74
+#: .\appHarryPotter\templates\index.html:81
+#: .\appHarryPotter\templates\index.html:290
+msgid "Razas"
+msgstr "Arrazak"
+
+#: .\appHarryPotter\templates\base.html:92
+msgid "Información"
+msgstr "Informazioa"
+
+#: .\appHarryPotter\templates\base.html:121
+#: .\appHarryPotter\templates\index.html:345
+msgid "¿Dónde encontrarnos?"
+msgstr "Non aurkitu?"
+
+#: .\appHarryPotter\templates\base.html:125
+#: .\appHarryPotter\templates\index.html:349
+msgid "Distrito Mágico Subterráneo, Ala Norte"
+msgstr "Lurpeko Barruti Magikoa, Ipar hegala"
+
+#: .\appHarryPotter\templates\base.html:126
+#: .\appHarryPotter\templates\index.html:350
+msgid "(Acceso restringido: Aparición únicamente para empleados registrados)"
+msgstr "(Sarbide mugatua: Erregistratutako langileentzat bakarrik)"
+
+
+#: .\appHarryPotter\templates\base.html:131
+#: .\appHarryPotter\templates\index.html:355
+msgid "Contacto"
+msgstr "Kontaktua"
+
+#: .\appHarryPotter\templates\base.html:134
+#: .\appHarryPotter\templates\index.html:358
+msgid "Teléfono:"
+msgstr "Telefonoa"
+
+#: .\appHarryPotter\templates\base.html:152
+#: .\appHarryPotter\templates\index.html:376
+msgid "Horario de atención."
+msgstr "Arreta-ordutegia"
+
+#: .\appHarryPotter\templates\base.html:156
+#: .\appHarryPotter\templates\index.html:380
+msgid "Lunes - Viernes"
+msgstr "Astelehena - Ostirala"
+
+#: .\appHarryPotter\templates\base.html:163
+#: .\appHarryPotter\templates\index.html:387
+msgid "Sábado"
+msgstr "Larunbata"
+
+#: .\appHarryPotter\templates\base.html:170
+#: .\appHarryPotter\templates\index.html:394
+msgid "Domingo"
+msgstr "Igandea"
+
+#: .\appHarryPotter\templates\base.html:173
+#: .\appHarryPotter\templates\index.html:397
+msgid "Cerrado"
+msgstr "Itxita"
+
+#: .\appHarryPotter\templates\index.html:64
+msgid "Acerca del Bestiario"
+msgstr "Bestiarioari buruz"
+
+#: .\appHarryPotter\templates\index.html:68
+msgid "Bestiario de Hogwarts"
+msgstr "Hogwartseko bestiarioa"
+
+#: .\appHarryPotter\templates\index.html:108
+msgid "Bienvenido al Bestiario de Harry Potter"
+msgstr "Ongi etorri Harry Poterren Bestiariora"
+
+#: .\appHarryPotter\templates\index.html:113
+msgid "Tus criaturas favoritas. "
+msgstr "Zure gogoko izakiak."
+
+#: .\appHarryPotter\templates\index.html:117
+msgid "Historia"
+msgstr "Historia"
+
+#: .\appHarryPotter\templates\index.html:120
+msgid "Descubre las razas"
+msgstr "Ezagutu arrazak"
+
+#: .\appHarryPotter\templates\index.html:145
+msgid "Explorando criaturas mágicas desde tiempos inmemoriales."
+msgstr "Aspaldiko garaietatik izaki magikoak esploratzen."
+
+#: .\appHarryPotter\templates\index.html:153
+msgid "Bestiraio"
+msgstr "Bestiarioa"
+
+#: .\appHarryPotter\templates\index.html:155
+msgid "Bestias y Magia"
+msgstr "Piztiak eta Magia"
+
+#: .\appHarryPotter\templates\index.html:174
+msgid "Criaturas y Razas"
+msgstr "Izakiak eta Arrazak"
+
+#: .\appHarryPotter\templates\index.html:176
+msgid "Descubre las diferentes Razas"
+msgstr "Ezagutu arraza ezberdinak"
+
+#: .\appHarryPotter\templates\index.html:251
+msgid "Descripciones de Bestias (Pulsa en el nombre para saber más)"
+msgstr "Piztien deskribapenak (Sakatu izenean gehiago jakiteko)"
+
+#: .\appHarryPotter\templates\index.html:253
+msgid "Bestias y características"
+msgstr "Piztiak eta ezaugarriak"
+
+msgid "Añadir criatura"
+msgstr "Gehitu izakia"
