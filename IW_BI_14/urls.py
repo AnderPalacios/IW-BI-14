@@ -18,9 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.i18n import i18n_patterns
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('', include('appHarryPotter.urls')), 
+    path('', RedirectView.as_view(url='/appHarryPotter/', permanent=False)),  # Para redirigir
+    path('appHarryPotter/', include('appHarryPotter.urls')),
     path("admin/", admin.site.urls),
 ]
 

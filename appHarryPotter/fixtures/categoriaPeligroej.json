@@ -1,0 +1,11 @@
+[
+    {
+        "model": "appHarryPotter.CategoriaPeligro",
+        "pk": 5,
+        "fields": {
+            "nombre": "Ultrahiper Mortal",
+            "nivel_peligro": 5,
+            "descripcion": "Criaturas extremadamente peligrosas, prácticamente imposibles de controlar. Representan una amenaza absoluta para la vida de cualquier ser vivo, incluso magos altamente experimentados. Su manejo está prohibido por las leyes mágicas."
+        }
+    }
+]

@@ -160,3 +160,6 @@ msgstr "Piztiak eta ezaugarriak"
 
 msgid "Añadir criatura"
 msgstr "Gehitu izakia"
+
+msgid "Añadir raza"
+msgstr "Gehitu arraza"

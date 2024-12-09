@@ -96,3 +96,6 @@ msgstr "Closed"
 
 msgid "Añadir criatura"
 msgstr "Add creature"
+
+msgid "Añadir raza"
+msgstr "Add breed"

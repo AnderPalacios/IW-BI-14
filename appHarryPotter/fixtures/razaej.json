@@ -1,0 +1,12 @@
+[
+    {
+      "model": "appHarryPotter.Raza",
+      "pk": 8,
+      "fields": {
+        "nombre": "Criatura Herbívora",
+        "descripcion": "Estas criaturas, aunque colosales, son pacíficas por naturaleza y se alimentan exclusivamente de vegetación.",
+        "habitat": "Llanuras abiertas donde pueden moverse libremente.",
+        "inteligencia": 7
+      }
+    }
+]

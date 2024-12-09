@@ -1,0 +1,13 @@
+[
+    {
+      "model": "appHarryPotter.criatura",
+      "pk": 1,
+      "fields": {
+        "nombre": "Rocaspina Gigantum",
+        "descripcion": "La Rocaspina Gigantum es una criatura herbívora de dimensiones colosales, cuya presencia impone respeto a todo aquel que se cruce en su camino.",
+        "tamano": "Entre 10 y 15 metros de ancho.",
+        "raza_id": 7,
+        "categorias_peligro":[1]
+      }
+    }
+]
