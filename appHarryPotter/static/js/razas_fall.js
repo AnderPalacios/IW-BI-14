@@ -4,7 +4,7 @@ $(document).ready(function () {
         $(this).css({
             position: "relative",
             top: "-200px", // Distancia a la que empieza
-            opacity: 0     // Invisible
-        }).delay(index * 200).animate( { top: "0",  opacity: 1 }, 2000, "swing" ); // Que dire 2s
+            opacity: 0     
+        }).delay(index * 200).animate( { top: "0",  opacity: 1 }, 2000, "swing" ); // Que dure 2s
     });
 });

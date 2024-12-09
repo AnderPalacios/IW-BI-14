@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let images = $('#scroll img'); // Selecciona las imágenes
+    let images = $('#scroll img'); // Seleccionar las imágenes
     let index = 0;
 
     function cambiaFondo() {

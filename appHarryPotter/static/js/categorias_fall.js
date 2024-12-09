@@ -8,7 +8,7 @@ $(document).ready(function () {
         }).delay(index * 200) 
           .animate(
             {
-                top: "0",  // Vuelve a la posición inicial 
+                top: "0",  
                 opacity: 1  
             },
             1000,     

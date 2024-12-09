@@ -4,6 +4,9 @@ from .models import CategoriaPeligro, Raza, Criatura
 from .forms import CriaturaForm, RazaForm
 from django.views.generic import DetailView, ListView, TemplateView
 from django.http import HttpResponse
+from django.utils.translation import activate
+from django.shortcuts import redirect
+from django.conf import settings
 from django.http import JsonResponse # Para devolver un JSON
 
 # Create your views here.
@@ -135,6 +138,7 @@ def formularios(request):
 
     return render(request, 'formularios.html', {'form': form})
 
+# El otro formulario
 def nueva_raza(request):
     if request.method == 'POST':
         form = RazaForm(request.POST)
@@ -157,10 +161,6 @@ def nueva_raza(request):
 class CriaturaDetailView(DetailView):
     model = Criatura
     template_name = 'criatura.html'
-
-from django.utils.translation import activate
-from django.shortcuts import redirect
-from django.conf import settings
 
 def set_language(request, lang_code):
     # Cambiar el idioma
