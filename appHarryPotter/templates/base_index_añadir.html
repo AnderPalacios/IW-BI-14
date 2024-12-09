@@ -32,20 +32,7 @@
                     </button>
     
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">{%trans "Inicio" %}</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">{%trans "Acerca del Bestiario" %}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">{%trans "Bestiario de Hogwarts" %}</a>
-                            </li>
-
-                        </ul>
+                        {% block navig %} {% endblock %}
 
                         <div class="ms-lg-3">
                             <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'criaturas' %}">
@@ -141,6 +128,8 @@
             </footer>
         </main>
         <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>| <a href="{% url 'set_language' 'eus' %}">Euskera</a>
+        {% block buscar %} {% endblock %}
         {% block jss %} {% endblock %}
+        <script src="{% static 'js/script_jquery.js' %}"></script>
     </body>
 </html>

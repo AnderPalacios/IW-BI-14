@@ -4,6 +4,7 @@ from .models import CategoriaPeligro, Raza, Criatura
 from .forms import CriaturaForm, RazaForm
 from django.views.generic import DetailView, ListView, TemplateView
 from django.http import HttpResponse
+from django.http import JsonResponse # Para devolver un JSON
 
 # Create your views here.
 # def index(request):
@@ -169,3 +170,12 @@ def set_language(request, lang_code):
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, lang_code)  # Guarda el idioma en cookies
         return response
     return redirect('/')
+
+def buscar_criaturas(request):
+    query = request.GET.get('q', '')  
+    criaturas = Criatura.objects.filter(nombre__icontains=query) 
+    data = [
+        {"id": c.id, "nombre": c.nombre, "descripcion": c.descripcion}
+        for c in criaturas
+    ]
+    return JsonResponse(data, safe=False)

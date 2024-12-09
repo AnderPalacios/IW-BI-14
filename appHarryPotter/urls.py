@@ -13,4 +13,5 @@ urlpatterns = [
  path('appHarryPotter/formulario/', views.formularios, name='formulario'),
  path('set-language/<str:lang_code>/', views.set_language, name='set_language'),
  path('appHarryPotter/nueva_raza/', views.nueva_raza, name='nueva_raza'),
+ path('buscar-criaturas/', views.buscar_criaturas, name='buscar_criaturas'),
 ]

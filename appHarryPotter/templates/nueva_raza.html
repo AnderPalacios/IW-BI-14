@@ -1,11 +1,20 @@
 {% extends "base_index_añadir.html" %}
 {% load static %}
+{%load i18n %}
 
 {% block encabezado %}
 <title>Añadir Raza - Bestiario de Harry Potter</title>
 <meta charset="UTF-8">
 <meta name="description" content="Formulario para añadir razas al bestiario de Harry Potter">
 <link href="{% static 'css/styleFormulario.css' %}" rel="stylesheet"> 
+{% endblock %}
+
+{% block navig %}
+<ul class="navbar-nav ms-lg-auto">
+    <li class="nav-item">
+        <a class="nav-link click-scroll" href="{% url 'index' %}">{%trans "Inicio" %}</a>
+    </li>
+</ul>
 {% endblock %}
 
 {% block contenido %}

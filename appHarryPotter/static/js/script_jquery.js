@@ -10,18 +10,15 @@ $(document).ready(function () {
         img.src = imgSrc; // le adjunto la ruta
     
         img.onload = function () {
-            // Tamaño de la pantalla
             let screenWidth = window.innerWidth;
             let screenHeight = window.innerHeight;
     
-            // Ajusta el tamaño de la imagen para cubrir toda la pantalla
+            // toda la pantalla
             let canvas = document.createElement('canvas');
             let ctx = canvas.getContext('2d');
     
             canvas.width = screenWidth;
             canvas.height = screenHeight;
-    
-            // Ajusta el tamaño manteniendo las proporciones
             let scale = Math.max(screenWidth / img.width, screenHeight / img.height);
             let x = (screenWidth - img.width * scale) / 2;
             let y = (screenHeight - img.height * scale) / 2;
@@ -31,7 +28,6 @@ $(document).ready(function () {
             // Convierte la imagen redimensionada en un data URL
             let resizedImgSrc = canvas.toDataURL();
     
-            // Cambia el fondo con un efecto de desvanecimiento
             $('.hero-section').fadeOut(500, function () {
                 $(this).css('background-image', `url(${resizedImgSrc})`).fadeIn(2000);
             });
@@ -180,4 +176,27 @@ function moverElementos() {
 moverElementos();
 setInterval(moverElementos, 7000);
 // ------------------------------------------------
+
+
+
+
+
+// AJAX
+document.getElementById('buscar').addEventListener('input', function () {
+    const query = this.value;
+    // AJAX
+    fetch(`/buscar-criaturas/?q=${query}`)
+        .then(response => response.json())
+        .then(data => {
+            const resultados = document.getElementById('resultados');
+            resultados.innerHTML = ''; // Limpia los resultados anteriores
+
+            data.forEach(criatura => {
+                const li = document.createElement('li');
+                li.textContent = `${criatura.nombre} - ${criatura.descripcion}`;
+                resultados.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+});
 });
