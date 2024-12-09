@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import CategoriaPeligro, Raza, Criatura
-from .forms import CriaturaForm
+from .forms import CriaturaForm, RazaForm
 from django.views.generic import DetailView, ListView, TemplateView
 from django.http import HttpResponse
 
@@ -94,7 +94,8 @@ class CriaturasPorRazaView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(CriaturasPorRazaView, self).get_context_data(**kwargs)
-        context['criaturas'] = get_list_or_404(Criatura.objects.filter(raza=self.object))
+        criaturas = Criatura.objects.filter(raza=self.object)
+        context['criaturas'] = criaturas
         return context
 
 
@@ -133,6 +134,19 @@ def formularios(request):
 
     return render(request, 'formularios.html', {'form': form})
 
+def nueva_raza(request):
+    if request.method == 'POST':
+        form = RazaForm(request.POST)
+        if form.is_valid():
+            print("Formulario válido. Datos: ", form.cleaned_data)
+            form.save()
+            return redirect('index')  # Redirige a una página que muestre todas las razas
+        else:
+            print("Errores del formulario:", form.errors)  # Debugging
+    else:
+        form = RazaForm()
+
+    return render(request, 'nueva_raza.html', {'form': form})
 
 
 
