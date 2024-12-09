@@ -387,8 +387,9 @@ strong {
 .navbar .container {
   background: rgba(0, 0, 0, 0.35);
   border-radius: var(--border-radius-medium);
-  padding: 15px 30px;
+  padding: 10px 5px;
 }
+
 
 .navbar-brand,
 .navbar-brand:hover {

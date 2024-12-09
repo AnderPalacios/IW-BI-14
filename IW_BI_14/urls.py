@@ -21,9 +21,10 @@ from django.conf.urls.i18n import i18n_patterns
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('', RedirectView.as_view(url='/appHarryPotter/', permanent=False)),  # Para redirigir
-    path('appHarryPotter/', include('appHarryPotter.urls')),
-    path("admin/", admin.site.urls),
+    # Redirige la raíz del sitio a /appHarryPotter
+    path('', RedirectView.as_view(url='/appHarryPotter', permanent=False)),  
+    path('appHarryPotter/', include('appHarryPotter.urls')),  # Incluye las URLs de la app
+    path("admin/", admin.site.urls),  # Admin
 ]
 
 # urlpatterns += i18n_patterns(

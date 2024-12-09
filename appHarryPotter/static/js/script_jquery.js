@@ -185,7 +185,7 @@ setInterval(moverElementos, 7000);
 document.getElementById('buscar').addEventListener('input', function () {
     const query = this.value;
     // AJAX
-    fetch(`/buscar-criaturas/?q=${query}`)
+    fetch(`/appHarryPotter/buscar-criaturas/?q=${query}`)
         .then(response => response.json())
         .then(data => {
             const resultados = document.getElementById('resultados');
