@@ -1,0 +1,146 @@
+{% load static %}
+{%load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% block encabezado %} {% endblock %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
+
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet"> 
+
+        <link href="{% static 'css/vegas.min.css' %}" rel="stylesheet"> 
+
+        <link href="{% static 'css/tooplate-barista.css' %}" rel="stylesheet"> 
+    </head>
+    <body>
+        <main>
+            <nav class="navbar navbar-expand-lg">                
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center">
+                        <img src="{% static 'images/logo.png' %}" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
+                        {%trans "Bestiario" %}
+                    </a>
+    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_1">{%trans "Inicio" %}</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">{%trans "Acerca del Bestiario" %}</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_4">{%trans "Bestiario de Hogwarts" %}</a>
+                            </li>
+
+                        </ul>
+
+                        <div class="ms-lg-3">
+                            <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'criaturas' %}">
+                                {%trans "Criaturas" %}
+                            </a>
+                            <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'categorias' %}">
+                                {%trans "Categorías" %}
+                            </a>
+                            <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'razas' %}">
+                                {%trans "Razas" %}
+                            </a>
+                            <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'formulario' %}">
+                                {% trans "Añadir criatura" %}
+                            </a>
+                            <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'nueva_raza' %}">
+                                Añadir raza
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {% block contenido %} {% endblock %}
+
+
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4 col-12 me-auto">
+                            <em class="text-white d-block mb-4">{%trans "¿Dónde encontrarnos?" %}</em>
+
+                            <strong class="text-white">
+                                <!-- <i class="bi-geo-alt me-2"></i> -->
+                                {%trans "Distrito Mágico Subterráneo, Ala Norte" %} <br><br>
+                                <em>{%trans "(Acceso restringido: Aparición únicamente para empleados registrados)" %}</em>
+                            </strong>
+                        </div>
+
+                        <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
+                            <em class="text-white d-block mb-4">{%trans "Contacto" %}</em>
+
+                            <p class="d-flex mb-1">
+                                <strong class="me-2">{%trans "Teléfono:" %}</strong>
+                                <a href="tel:305-240-9671" class="site-footer-link">
+                                    (34) 
+                                    605 240 671
+                                </a>
+                            </p>
+
+                            <p class="d-flex">
+                                <strong class="me-2">Email:</strong>
+
+                                <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                                    harry_p@bestiario.com
+                                </a>
+                            </p>
+                        </div>
+
+
+                        <div class="col-lg-5 col-12">
+                            <em class="text-white d-block mb-4">{%trans "Horario de atención." %}</em>
+
+                            <ul class="opening-hours-list">
+                                <li class="d-flex">
+                                    {%trans "Lunes - Viernes" %}
+                                    <span class="underline"></span>
+
+                                    <strong>9:00 - 18:00</strong>
+                                </li>
+
+                                <li class="d-flex">
+                                    {%trans "Sábado" %}
+                                    <span class="underline"></span>
+
+                                    <strong>11:00 - 16:30</strong>
+                                </li>
+
+                                <li class="d-flex">
+                                    {%trans "Domingo" %}
+                                    <span class="underline"></span>
+
+                                    <strong>{%trans "Cerrado" %}</strong>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-8 col-12 mt-4">
+                            <p class="copyright-text mb-0">Copyright © Bestiario HP</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>| <a href="{% url 'set_language' 'eus' %}">Euskera</a>
+        {% block jss %} {% endblock %}
+    </body>
+</html>

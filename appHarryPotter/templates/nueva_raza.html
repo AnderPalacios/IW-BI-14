@@ -1,72 +1,70 @@
+{% extends "base_index_añadir.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Añadir Raza - Bestiario de Harry Potter</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Formulario para añadir razas al bestiario de Harry Potter">
-        <link href="{% static 'css/styleFormulario.css' %}" rel="stylesheet"> 
-    </head>
-    <body>
-        <main>
-            <section class="formulario">
-                <h2><strong>Añadir una Nueva Raza</strong></h2>
-                <h4><strong>Completa el formulario para incluir una nueva raza al bestiario</strong></h4>
-                <form method="post">
-                    {% csrf_token %}
-                    <section class="row">
-                        <fieldset class="personal_info">
-                            <legend>Información de la Raza</legend>
-                            
-                            <div class="element">
-                                <label for="id_nombre" required>Nombre: </label>
-                                {{ form.nombre }}
-                                {% if form.nombre.errors %}
-                                    <div class="error">
-                                        {{ form.nombre.errors }}
-                                    </div>
-                                {% endif %}
-                            </div>
-                            
-                            <div class="element">
-                                <label for="id_descripcion" required>Descripción: </label>
-                                {{ form.descripcion }}
-                                {% if form.descripcion.errors %}
-                                    <div class="error">
-                                        {{ form.descripcion.errors }}
-                                    </div>
-                                {% endif %}
-                            </div>
 
-                            <div class="element">
-                                <label for="id_habitat" required>Habitat: </label>
-                                {{ form.habitat }}
-                                {% if form.habitat.errors %}
-                                    <div class="error">
-                                        {{ form.habitat.errors }}
-                                    </div>
-                                {% endif %}
-                            </div>
+{% block encabezado %}
+<title>Añadir Raza - Bestiario de Harry Potter</title>
+<meta charset="UTF-8">
+<meta name="description" content="Formulario para añadir razas al bestiario de Harry Potter">
+<link href="{% static 'css/styleFormulario.css' %}" rel="stylesheet"> 
+{% endblock %}
 
-                            <div class="element">
-                                <label for="id_inteligencia" required>Inteligencia: </label>
-                                {{ form.inteligencia }}
-                                {% if form.inteligencia.errors %}
-                                    <div class="error">
-                                        {{ form.inteligencia.errors }}
-                                    </div>
-                                {% endif %}
-                            </div>
+{% block contenido %}
+<section class="formulario">
+    <h2><strong>Añadir una Nueva Raza</strong></h2>
+    <h4><strong>Completa el formulario para incluir una nueva raza al bestiario</strong></h4>
+    <form method="post">
+        {% csrf_token %}
+        <section class="row">
+            <fieldset class="personal_info">
+                <legend>Información de la Raza</legend>
+                
+                <div class="element">
+                    <label for="id_nombre" required>Nombre: </label>
+                    {{ form.nombre }}
+                    {% if form.nombre.errors %}
+                        <div class="error">
+                            {{ form.nombre.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="element">
+                    <label for="id_descripcion" required>Descripción: </label>
+                    {{ form.descripcion }}
+                    {% if form.descripcion.errors %}
+                        <div class="error">
+                            {{ form.descripcion.errors }}
+                        </div>
+                    {% endif %}
+                </div>
 
-                        </fieldset>
-                    </section>
+                <div class="element">
+                    <label for="id_habitat" required>Habitat: </label>
+                    {{ form.habitat }}
+                    {% if form.habitat.errors %}
+                        <div class="error">
+                            {{ form.habitat.errors }}
+                        </div>
+                    {% endif %}
+                </div>
 
-                    <section class="final_row">
-                        <button type="submit" class="btn btn-success mb-5">Enviar</button>
-                        <button type="button" class="btn btn-secondary mb-5" onclick=location.href="{% url 'index' %}">Volver</button>
-                    </section>
-                </form>                
-            </section>
-        </main>
-    </body>
-</html>
+                <div class="element">
+                    <label for="id_inteligencia" required>Inteligencia: </label>
+                    {{ form.inteligencia }}
+                    {% if form.inteligencia.errors %}
+                        <div class="error">
+                            {{ form.inteligencia.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+
+            </fieldset>
+        </section>
+
+        <section class="final_row">
+            <button type="submit" class="btn btn-success mb-5">Enviar</button>
+            <button type="button" class="btn btn-secondary mb-5" onclick=location.href="{% url 'index' %}">Volver</button>
+        </section>
+    </form>                
+</section>
+{% endblock %}

@@ -1,428 +1,270 @@
+{% extends "base_index_añadir.html" %}
 {% load static %}
 {% load i18n %}
-<!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
-            
-        <title>{%trans "Bestiario de Harry Potter" %}</title>
+{% block encabezado %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSS FILES -->                
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description" content="">
+<meta name="author" content="">
+    
+<title>{%trans "Bestiario de Harry Potter" %}</title>
 
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,400;0,600;0,700;1,200;1,700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+{% endblock %}
 
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
 
-        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet"> 
+{% block contenido %}
+<section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
-        <link href="{% static 'css/vegas.min.css' %}" rel="stylesheet"> 
+    <div class="container">
+        <!-- Fondo rotatorio -->
+        <div id="scroll" class="ocultas" style="display: none;"> 
+            <img src="{% static 'images/fondo1.jpg' %}" alt="Fondo 1">
+            <img src="{% static 'images/fondo2.png' %}" alt="Fondo 2">
+            <img src="{% static 'images/fondo3.jpg' %}" alt="Fondo 3">
+        </div>
 
-        <link href="{% static 'css/tooplate-barista.css' %}" rel="stylesheet"> 
 
-        <!-- JAVASCRIPT FILES --> 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+        <div class="row align-items-center">
 
-        <!-- <script type="text/javascript" src="{% static 'js/script_jquery.js' %}"></script> -->
-        
-<!--
-
-https://www.tooplate.com/view/2137-barista-cafe
-
-Bootstrap 5 HTML CSS Template
-
--->
-    </head>
-    <body>
+            <div class="col-lg-6 col-12 mx-auto">
+                <em class="small-text">{%trans "Bienvenido al Bestiario de Harry Potter" %}</em>
                 
-            <main>
-                <nav class="navbar navbar-expand-lg">                
-                    <div class="container">
-                        <a class="navbar-brand d-flex align-items-center">
-                            <img src="{% static 'images/logo.png' %}" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
-                            {%trans "Bestiario" %}
-                        </a>
-        
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-        
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav ms-lg-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link click-scroll" href="#section_1">{%trans "Inicio" %}</a>
-                                </li>
-        
-                                <li class="nav-item">
-                                    <a class="nav-link click-scroll" href="#section_2">{%trans "Acerca del Bestiario" %}</a>
-                                </li>
+                <h1>{%trans "Bestiario de Harry Potter" %}</h1>
 
-                                <li class="nav-item">
-                                    <a class="nav-link click-scroll" href="#section_4">{%trans "Bestiario de Hogwarts" %}</a>
-                                </li>
+                <p class="text-white mb-4 pb-lg-2">
+                    {%blocktrans%}Tus criaturas <em>favoritas</em>. {%endblocktrans%}
+                </p>
 
-                            </ul>
+                <a class="btn custom-btn custom-border-btn smoothscroll me-3" href="#section_2">
+                    {%trans "Historia" %}
+                </a>
 
-                            <div class="ms-lg-3">
-                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'criaturas' %}">
-                                    {%trans "Criaturas" %}
-                                </a>
-                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'categorias' %}">
-                                    {%trans "Categorías" %}
-                                </a>
-                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'razas' %}">
-                                    {%trans "Razas" %}
-                                </a>
-                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'formulario' %}">
-                                    {% trans "Añadir criatura" %}
-                                </a>
-                                <a class="btn2 custom-btn2 custom-border-btn2" href="{% url 'nueva_raza' %}">
-                                    Añadir raza
-                                </a>
-                                <!-- <p class="HOLA">HOLAAAAAAAA</p> -->
-                            </div>
-                        </div>
+                <a class="btn custom-btn smoothscroll me-2 mb-2" href="#razas"><strong>{%trans "Descubre las razas" %}</strong></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hero-slides"></div>
+</section>
+
+
+<section class="about-section section-padding" id="section_2">
+    <div class="section-overlay"></div>
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 col-12">
+                <div class="ratio ratio-1x1">
+                    <video autoplay="" loop="" muted="" class="custom-video">
+                        <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
+                        <!-- <source src="{% static 'videos/video.gif' %}" type="video/mp4"> -->
+
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <div class="about-video-info d-flex flex-column">
+                        <h4 class="mt-auto">{% trans "Explorando criaturas mágicas desde tiempos inmemoriales." %}</h4>
+
+                        <!-- <h4>El bestiario más fascinante del mundo mágico.</h4> -->
                     </div>
-                </nav>
-                <!-- Aquí acaba la barra de navegación -->
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
+                <em class="text-white">{%trans "Bestiraio" %}</em>
+
+                <h2 class="text-white mb-3">{%trans "Bestias y Magia" %}</h2>
+
+                <p class="text-white" id="p1">Desde los albores del mundo mágico, las criaturas mágicas han sido fundamentales para comprender la riqueza y diversidad de nuestra historia. Desde majestuosos hipogrifos hasta temibles dragones, cada especie tiene un papel único en la interacción entre magos y la naturaleza.</p>
+
+                <p class="text-white" id="p2">Las criaturas mágicas de Harry Potter se agrupan en distintas razas y categorías de peligrosidad, que van desde aquellas inofensivas hasta las que representan una amenaza mortal. Cada criatura tiene su propia historia y características que la hacen única dentro del mundo mágico.</p>
+                <button id="startButton" class="btn btn-primary">Mostrar información</button>
+                <a href="#razas" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Descubre el mundo mágico de las bestias</a>
+            </div>
+
+        </div>
+    </div>
+</section>
 
 
-                <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+<section class="barista-section section-padding section-bg" id="razas">
+    <div class="container">
+        <div class="row justify-content-center" id="rotar_razas">
 
-                    <div class="container">
-                        <!-- Fondo rotatorio -->
-                        <div id="scroll" class="ocultas" style="display: none;"> 
-                            <img src="{% static 'images/fondo1.jpg' %}" alt="Fondo 1">
-                            <img src="{% static 'images/fondo2.png' %}" alt="Fondo 2">
-                            <img src="{% static 'images/fondo3.jpg' %}" alt="Fondo 3">
-                        </div>
+            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2" id="no_rotar">
+                <em class="text-white">{%trans "Criaturas y Razas" %}</em>
 
-
-                        <div class="row align-items-center">
-
-                            <div class="col-lg-6 col-12 mx-auto">
-                                <em class="small-text">{%trans "Bienvenido al Bestiario de Harry Potter" %}</em>
-                                
-                                <h1>{%trans "Bestiario de Harry Potter" %}</h1>
-
-                                <p class="text-white mb-4 pb-lg-2">
-                                    {%blocktrans%}Tus criaturas <em>favoritas</em>. {%endblocktrans%}
-                                </p>
-
-                                <a class="btn custom-btn custom-border-btn smoothscroll me-3" href="#section_2">
-                                    {%trans "Historia" %}
-                                </a>
-
-                                <a class="btn custom-btn smoothscroll me-2 mb-2" href="#razas"><strong>{%trans "Descubre las razas" %}</strong></a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="hero-slides"></div>
-                </section>
-
-
-                <section class="about-section section-padding" id="section_2">
-                    <div class="section-overlay"></div>
-                    <div class="container">
-                        <div class="row align-items-center">
-
-                            <div class="col-lg-6 col-12">
-                                <div class="ratio ratio-1x1">
-                                    <video autoplay="" loop="" muted="" class="custom-video">
-                                        <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
-                                        <!-- <source src="{% static 'videos/video.gif' %}" type="video/mp4"> -->
-
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    
-                                    <div class="about-video-info d-flex flex-column">
-                                        <h4 class="mt-auto">{% trans "Explorando criaturas mágicas desde tiempos inmemoriales." %}</h4>
-
-                                        <!-- <h4>El bestiario más fascinante del mundo mágico.</h4> -->
+                <h2 class="text-white">{%trans "Descubre las diferentes Razas" %}</h2>
+            </div>
+            <!--  -->
+            <!-- <div class="criaturas-container"> -->
+                {% if lista_criaturas %}
+                    {% for criatura in lista_criaturas %}
+                        <div class="col-lg-3 col-md-6 col-12 mb-4">
+                            <div class="team-block-wrap">
+                                <div class="team-block-info d-flex flex-column">
+                                    <div class="d-flex mt-auto mb-3">
+                                        <h4 class="text-white mb-0">{{ criatura.nombre }}</h4>
+                                        <p class="badge ms-4"><em>{{ criatura.raza.nombre }}</em></p>
                                     </div>
+                                    {% if criatura.nombre == "Troll" %}
+                                        <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
+                                    {% elif criatura.nombre == "Hombre lobo" %}
+                                        <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
+                                    {% elif criatura.nombre == "Fénix" %}
+                                        <p class="text-white mb-0">Ave inmortal que renace de sus cenizas.</p>
+                                    {% elif criatura.nombre == "Colacuerno Húngaro" %}
+                                        <p class="text-white mb-0">Dragón negro más temido.</p>
+                                    {% elif criatura.nombre == "Dementor" %}
+                                        <p class="text-white mb-0">Ser oscuro que arrebata el alma de sus víctimas.</p>
+                                    {% elif criatura.nombre == "Sirena" %}
+                                        <p class="text-white mb-0">Seres inteligentes que habitan en lagos mágicos.</p>
+                                    {% elif criatura.nombre == "Centauro" %}
+                                        <p class="text-white mb-0">Seres híbridos, expertos en astronomía.</p>
+                                    {% else %}
+                                        <p>No hay descripción para esta criatura</p>
+                                    {% endif %}
+                                </div>
+
+                                <div class="team-block-image-wrap">
+                                    {% if criatura.nombre == "Troll" %}
+                                        <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Hombre lobo" %}
+                                    <img src="{% static 'images/hombre_lobo.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Fénix" %}
+                                    <img src="{% static 'images/fenix.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Colacuerno Húngaro" %}
+                                    <img src="{% static 'images/colacuerno.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Dementor" %}
+                                    <img src="{% static 'images/dementor.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Sirena" %}
+                                    <img src="{% static 'images/sirena.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                    {% if criatura.nombre == "Centauro" %}
+                                    <img src="{% static 'images/centauro.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay criaturas para estas razas.</p>
+                {% endif %}
+            <!-- </div> -->
+            <!--  -->
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="reviews-section section-padding section-bg" id="section_4">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                {% trans '<em class="text-white">Descripciones de Bestias <br> (Pulsa en el nombre para saber más)</em>' %}
+
+                <h2 class="text-white">{%trans "Bestias y características" %}</h2>
+            </div>
+            <!-- "{% static 'images/centauro.jpg' %}" -->
+            <div class="timeline">
+                <div class="timeline-container timeline-container-left">
+                    <div class="timeline-content">
+                        <div class="reviews-block">
+                            <div class="reviews-block-image-wrap d-flex align-items-center">
+                                <!-- <img src="{% static 'images/criaturas.jpg' %}" class="reviews-block-image img-fluid" alt=""> -->
+
+                                <div class="">
+                                    <h6 class="text-white mb-0">
+                                        <a href="{% url 'criaturas' %}" class="text-white text-decoration-none">{% trans "Criaturas" %}</a>
+                                    </h6>
                                 </div>
                             </div>
 
-                            <div class="col-lg-5 col-12 mt-4 mt-lg-0 mx-auto">
-                                <em class="text-white">{%trans "Bestiraio" %}</em>
+                            <div class="reviews-block-info">
+                                <p>Explora las fascinantes bestias mágicas del mundo de Harry Potter, cada una con sus propios poderes y misterios, desde las más gentiles hasta las más peligrosas.</p>
 
-                                <h2 class="text-white mb-3">{%trans "Bestias y Magia" %}</h2>
+                                <div class="d-flex border-top pt-3 mt-4">
+                                    <strong class="text-white">¿Sabías que? <small class="ms-2">El Thestral es invisible para aquellos que no han presenciado la muerte.</small></strong>
 
-                                <p class="text-white" id="p1">Desde los albores del mundo mágico, las criaturas mágicas han sido fundamentales para comprender la riqueza y diversidad de nuestra historia. Desde majestuosos hipogrifos hasta temibles dragones, cada especie tiene un papel único en la interacción entre magos y la naturaleza.</p>
-
-                                <p class="text-white" id="p2">Las criaturas mágicas de Harry Potter se agrupan en distintas razas y categorías de peligrosidad, que van desde aquellas inofensivas hasta las que representan una amenaza mortal. Cada criatura tiene su propia historia y características que la hacen única dentro del mundo mágico.</p>
-                                <button id="startButton" class="btn btn-primary">Mostrar información</button>
-                                <a href="#razas" class="smoothscroll btn custom-btn custom-border-btn mt-3 mb-4">Descubre el mundo mágico de las bestias</a>
+                                </div>
                             </div>
-
                         </div>
                     </div>
-                </section>
+                </div>
 
+                <div class="timeline-container timeline-container-right">
+                    <div class="timeline-content">
+                        <div class="reviews-block">
+                            <div class="reviews-block-image-wrap d-flex align-items-center">
+                                <!-- <img src="images/reviews/senior-man-white-sweater-eyeglasses.jpg" class="reviews-block-image img-fluid" alt=""> -->
 
-                <section class="barista-section section-padding section-bg" id="razas">
-                    <div class="container">
-                        <div class="row justify-content-center" id="rotar_razas">
-
-                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2" id="no_rotar">
-                                <em class="text-white">{%trans "Criaturas y Razas" %}</em>
-
-                                <h2 class="text-white">{%trans "Descubre las diferentes Razas" %}</h2>
-                            </div>
-                            <!--  -->
-                            <!-- <div class="criaturas-container"> -->
-                                {% if lista_criaturas %}
-                                    {% for criatura in lista_criaturas %}
-                                        <div class="col-lg-3 col-md-6 col-12 mb-4">
-                                            <div class="team-block-wrap">
-                                                <div class="team-block-info d-flex flex-column">
-                                                    <div class="d-flex mt-auto mb-3">
-                                                        <h4 class="text-white mb-0">{{ criatura.nombre }}</h4>
-                                                        <p class="badge ms-4"><em>{{ criatura.raza.nombre }}</em></p>
-                                                    </div>
-                                                    {% if criatura.nombre == "Troll" %}
-                                                        <p class="text-white mb-0">Criatura enorme y torpe, pero fuerte y peligrosa.</p>
-                                                    {% elif criatura.nombre == "Hombre lobo" %}
-                                                        <p class="text-white mb-0">Ser humano que se transforma en un lobo.</p>
-                                                    {% elif criatura.nombre == "Fénix" %}
-                                                        <p class="text-white mb-0">Ave inmortal que renace de sus cenizas.</p>
-                                                    {% elif criatura.nombre == "Colacuerno Húngaro" %}
-                                                        <p class="text-white mb-0">Dragón negro más temido.</p>
-                                                    {% elif criatura.nombre == "Dementor" %}
-                                                        <p class="text-white mb-0">Ser oscuro que arrebata el alma de sus víctimas.</p>
-                                                    {% elif criatura.nombre == "Sirena" %}
-                                                        <p class="text-white mb-0">Seres inteligentes que habitan en lagos mágicos.</p>
-                                                    {% elif criatura.nombre == "Centauro" %}
-                                                        <p class="text-white mb-0">Seres híbridos, expertos en astronomía.</p>
-                                                    {% else %}
-                                                        <p>No hay descripción para esta criatura</p>
-                                                    {% endif %}
-                                                </div>
-
-                                                <div class="team-block-image-wrap">
-                                                    {% if criatura.nombre == "Troll" %}
-                                                        <img src="{% static 'images/troll.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Hombre lobo" %}
-                                                    <img src="{% static 'images/hombre_lobo.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Fénix" %}
-                                                    <img src="{% static 'images/fenix.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Colacuerno Húngaro" %}
-                                                    <img src="{% static 'images/colacuerno.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Dementor" %}
-                                                    <img src="{% static 'images/dementor.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Sirena" %}
-                                                    <img src="{% static 'images/sirena.png' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                    {% if criatura.nombre == "Centauro" %}
-                                                    <img src="{% static 'images/centauro.jpg' %}" class="team-block-image img-fluid" alt="{{criatura.nombre}}">
-                                                    {% endif %}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    {% endfor %}
-                                {% else %}
-                                    <p>No hay criaturas para estas razas.</p>
-                                {% endif %}
-                            <!-- </div> -->
-                            <!--  -->
-
-                        </div>
-                    </div>
-                </section>
-
-
-
-                <section class="reviews-section section-padding section-bg" id="section_4">
-                    <div class="container">
-                        <div class="row justify-content-center">
-
-                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
-                                {% trans '<em class="text-white">Descripciones de Bestias <br> (Pulsa en el nombre para saber más)</em>' %}
-
-                                <h2 class="text-white">{%trans "Bestias y características" %}</h2>
-                            </div>
-                            <!-- "{% static 'images/centauro.jpg' %}" -->
-                            <div class="timeline">
-                                <div class="timeline-container timeline-container-left">
-                                    <div class="timeline-content">
-                                        <div class="reviews-block">
-                                            <div class="reviews-block-image-wrap d-flex align-items-center">
-                                                <!-- <img src="{% static 'images/criaturas.jpg' %}" class="reviews-block-image img-fluid" alt=""> -->
-
-                                                <div class="">
-                                                    <h6 class="text-white mb-0">
-                                                        <a href="{% url 'criaturas' %}" class="text-white text-decoration-none">{% trans "Criaturas" %}</a>
-                                                    </h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="reviews-block-info">
-                                                <p>Explora las fascinantes bestias mágicas del mundo de Harry Potter, cada una con sus propios poderes y misterios, desde las más gentiles hasta las más peligrosas.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <strong class="text-white">¿Sabías que? <small class="ms-2">El Thestral es invisible para aquellos que no han presenciado la muerte.</small></strong>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-container timeline-container-right">
-                                    <div class="timeline-content">
-                                        <div class="reviews-block">
-                                            <div class="reviews-block-image-wrap d-flex align-items-center">
-                                                <!-- <img src="images/reviews/senior-man-white-sweater-eyeglasses.jpg" class="reviews-block-image img-fluid" alt=""> -->
-
-                                                <div class="">
-                                                    <h6 class="text-white mb-0">
-                                                        <a href="{% url 'razas' %}" class="text-white text-decoration-none">{% trans "Razas" %}</a>
-                                                    </h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="reviews-block-info">
-                                                <p>Descubre las diferentes razas mágicas, cada una con habilidades especiales y un papel único dentro del universo de Harry Potter.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <strong class="text-white">¿Sabías que? <small class="ms-2"> Las criaturas híbridas, son muy orgullosas y pueden ser muy peligrosas si no se les trata con el respeto que merecen.</small></strong>
-
-                                
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="timeline-container timeline-container-left">
-                                    <div class="timeline-content">
-                                        <div class="reviews-block">
-                                            <div class="reviews-block-image-wrap d-flex align-items-center">
-                                                <!-- <img src="images/reviews/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg" class="reviews-block-image img-fluid" alt=""> -->
-
-                                                <div class="">
-                                                    <h6 class="text-white mb-0">
-                                                        <a href="{% url 'categorias' %}" class="text-white text-decoration-none">{% trans "Categorías" %}</a>
-                                                    </h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="reviews-block-info">
-                                                <p>Las criaturas mágicas se agrupan según su nivel de peligrosidad, desde las inofensivas hasta las extremadamente peligrosas, dependiendo de su poder y agresividad.</p>
-
-                                                <div class="d-flex border-top pt-3 mt-4">
-                                                    <strong class="text-white">¿Sabías que? <small class="ms-2">Las criaturas de categoría inofensiva, como el Unicornio, son inocuas para los humanos pero poseen poderes mágicos muy valiosos.</small></strong>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="">
+                                    <h6 class="text-white mb-0">
+                                        <a href="{% url 'razas' %}" class="text-white text-decoration-none">{% trans "Razas" %}</a>
+                                    </h6>
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                </section>
+                            <div class="reviews-block-info">
+                                <p>Descubre las diferentes razas mágicas, cada una con habilidades especiales y un papel único dentro del universo de Harry Potter.</p>
 
+                                <div class="d-flex border-top pt-3 mt-4">
+                                    <strong class="text-white">¿Sabías que? <small class="ms-2"> Las criaturas híbridas, son muy orgullosas y pueden ser muy peligrosas si no se les trata con el respeto que merecen.</small></strong>
 
                 
-                <footer class="site-footer">
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-lg-4 col-12 me-auto">
-                                <em class="text-white d-block mb-4">{%trans "¿Dónde encontrarnos?" %}</em>
-
-                                <strong class="text-white">
-                                    <!-- <i class="bi-geo-alt me-2"></i> -->
-                                    {%trans "Distrito Mágico Subterráneo, Ala Norte" %} <br><br>
-                                    <em>{%trans "(Acceso restringido: Aparición únicamente para empleados registrados)" %}</em>
-                                </strong>
-                            </div>
-
-                            <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
-                                <em class="text-white d-block mb-4">{%trans "Contacto" %}</em>
-
-                                <p class="d-flex mb-1">
-                                    <strong class="me-2">{%trans "Teléfono:" %}</strong>
-                                    <a href="tel:305-240-9671" class="site-footer-link">
-                                        (34) 
-                                        605 240 671
-                                    </a>
-                                </p>
-
-                                <p class="d-flex">
-                                    <strong class="me-2">Email:</strong>
-
-                                    <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                                        harry_p@bestiario.com
-                                    </a>
-                                </p>
-                            </div>
-
-
-                            <div class="col-lg-5 col-12">
-                                <em class="text-white d-block mb-4">{%trans "Horario de atención." %}</em>
-
-                                <ul class="opening-hours-list">
-                                    <li class="d-flex">
-                                        {%trans "Lunes - Viernes" %}
-                                        <span class="underline"></span>
-
-                                        <strong>9:00 - 18:00</strong>
-                                    </li>
-
-                                    <li class="d-flex">
-                                        {%trans "Sábado" %}
-                                        <span class="underline"></span>
-
-                                        <strong>11:00 - 16:30</strong>
-                                    </li>
-
-                                    <li class="d-flex">
-                                        {%trans "Domingo" %}
-                                        <span class="underline"></span>
-
-                                        <strong>{%trans "Cerrado" %}</strong>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="col-lg-8 col-12 mt-4">
-                                <p class="copyright-text mb-0">Copyright © Bestiario HP</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </footer>
-            </main>
+                </div>
 
-        <!-- JAVASCRIPT FILES -->
-        <!-- <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/click-scroll.js"></script>
-        <script src="js/vegas.min.js"></script> -->
-        <!-- <script src="js/custom.js"></script> -->
-        <!-- <a href="/es/">Español</a> | <a href="/en-us/">English</a> -->
-        <a href="{% url 'set_language' 'es' %}">Español</a> | <a href="{% url 'set_language' 'en' %}">English</a>| <a href="{% url 'set_language' 'eus' %}">Euskera</a>
-        
+                <div class="timeline-container timeline-container-left">
+                    <div class="timeline-content">
+                        <div class="reviews-block">
+                            <div class="reviews-block-image-wrap d-flex align-items-center">
+                                <!-- <img src="images/reviews/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg" class="reviews-block-image img-fluid" alt=""> -->
 
-        <!-- Nuestros scrips JAVASCRIPT-->
-        <script src="{% static 'js/script_jquery.js' %}"></script>
-        <script src="{% static 'js/rotar_razas.js' %}"></script>
-    </body>
-</html>
+                                <div class="">
+                                    <h6 class="text-white mb-0">
+                                        <a href="{% url 'categorias' %}" class="text-white text-decoration-none">{% trans "Categorías" %}</a>
+                                    </h6>
+                                </div>
+                            </div>
+
+                            <div class="reviews-block-info">
+                                <p>Las criaturas mágicas se agrupan según su nivel de peligrosidad, desde las inofensivas hasta las extremadamente peligrosas, dependiendo de su poder y agresividad.</p>
+
+                                <div class="d-flex border-top pt-3 mt-4">
+                                    <strong class="text-white">¿Sabías que? <small class="ms-2">Las criaturas de categoría inofensiva, como el Unicornio, son inocuas para los humanos pero poseen poderes mágicos muy valiosos.</small></strong>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+{% block jss %}
+<!-- Nuestros scrips JAVASCRIPT-->
+<script src="{% static 'js/script_jquery.js' %}"></script>
+<script src="{% static 'js/rotar_razas.js' %}"></script>
+{% endblock %}
