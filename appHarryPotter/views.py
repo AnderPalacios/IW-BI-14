@@ -9,6 +9,7 @@ from django.shortcuts import redirect
 from django.conf import settings
 from django.http import JsonResponse # Para devolver un JSON
 
+# Las vistas antiguas utilizaban shortcuts 404, ahora con vistas basadas en clases no es necesario.
 # Create your views here.
 # def index(request):
 #     # Aquí pasarle al index.html las razas y que pille una de ellas
